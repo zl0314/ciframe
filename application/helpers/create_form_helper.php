@@ -189,7 +189,7 @@ if(!function_exists('createFormHtml')){
 					    	$formHtml .= '<div class="form-row"  id="wrapper_'.$k.'" >
 				                    <label for="'.$k.'" class="form-field">'.$field.'</label>
 				                    <div class="form-cont">
-				                    <select id="'.$name.'"  '.$required.'name="data['.$name.']'.$as_arr.'"  '.$multiple.' required >
+				                    <select id="'.$name.'"  '.$required.' name="data['.$name.']'.$as_arr.'"  '.$multiple.' required >
 				                    	<option value="">请选择</option>';
 				            
 				                        if(!empty($r['data'])){
