@@ -17,7 +17,7 @@
 		  }
 	  </style>
 <!--<span style="float:right;font-size:13px;font-weight:bold;background:#108A58;color:#fff; border-radius:3px;cursor:pointer;display:inline-block; height: 25px; line-height: 25px; margin: 5px 10px;padding: 0 10px" onclick="gotoWhere()">返回</span>-->
-当前位置：<?php echo @$menus[ucwords($siteclass)]['topmenu']?><span> / </span><?php echo @$menus[ucwords($siteclass)][$sitemethod]['name']?>
+当前位置：<?php echo @$menus[ucfirst($siteclass)]['topmenu']?><span> / </span><?php echo @$menus[ucfirst($siteclass)][$sitemethod]['name']?>
 	 <?php if($siteclass != 'Admin'):?>
 	   <span style="color:#fff;margin-left:100px;" class="return" onclick="gotoWhere()">返回</span>
 	<?php endif;?>

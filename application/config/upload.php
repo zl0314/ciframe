@@ -5,7 +5,7 @@ $config['default'] = array(
 		'allowed_types' => 'gif|jpg|png|jpeg|PNG|JPG|JPEG',
 		'encrypt_name' => TRUE,
 		'create_thumb' => FALSE,
-		'max_size' => 8328951,
+		'max_size' => ini_get('upload_max_filesize')*1024,
 );
 
 

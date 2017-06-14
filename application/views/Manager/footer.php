@@ -6,7 +6,7 @@ function reloadpage(){
 }
 //列表批量排序
 function listorder(order_field){
-	$('#Form').attr('action', '<?php echo site_url('Manager/'.$siteclass.'/public_listorder')?>');
+	$('#Form').attr('action', '<?php echo site_url(MANAGER_PATH . '/'.$siteclass.'/public_listorder')?>');
 	$('#Form').submit();
 }
 
@@ -25,13 +25,12 @@ function delitem(id){
 		}
 	
 		if(confirm('确定删除这些信息吗？')){
-			$('#Form').attr('action', '<?php echo site_url('Manager/'.$siteclass.'/delete')?>');
+			$('#Form').attr('action', '<?php echo site_url(MANAGER_PATH . '/'.$siteclass.'/delete')?>');
 			$('#Form').submit();
 		}
 	}else if(id != 'a'){
 		if(confirm('确定删除这些信息吗？')){
-//			_goto('<?php //echo site_url('Manager/'.$siteclass.'/delete?id=')?>//'+id);
-			$('#Form').attr('action', '<?php echo site_url('Manager/'.$siteclass.'/delete?id=')?>'+id);
+			$('#Form').attr('action', '<?php echo site_url(MANAGER_PATH . '/'.$siteclass.'/delete?id=')?>'+id);
 			$('#Form').submit();
 		}
 	}else{
@@ -48,19 +47,10 @@ function selallck(o){
 		$('td').find('input[type="checkbox"]').prop('checked',false);
 	}
 }
+
 //删除图片
 function delpic(pic){
-	console.log(typeof(pic));
-	if(typeof('pic') == 'object' && pic.length <= 0){
-		return false;
-	}
-	if(pic == '' && typeof('pic') == 'string'){
-		return false;
-	}
-	if(typeof(pic) == 'undefined'){
-		return false;
-	}
-	$.post('<?php echo site_url('Manager/Publicpicprocess/delete')?>', { pic:pic }, function(data) {});
+	$.post('<?php echo site_url(MANAGER_PATH . '/Publicpicprocess/delete')?>', { pic:pic }, function(data) {});
 }
 var allow = 1;
 var allow_size = typeof(allow_size) == 'undefined' ? '<?php echo str_replace('M','', ini_get('upload_max_filesize'))*1024*1024?>' : allow_size;
@@ -82,18 +72,24 @@ function fileSelected(t){
 }
 
 //ajax上传图片 id 输入框ID ，upload指定POST文件对象
-function ajaxUpload ( id, upload ) {
-  if(typeof('upload') == 'undefined'){
+function ajaxUpload ( id, upload, width, height ) {
+    if(typeof('upload') == 'undefined'){
       upload = 'default';
-  }
-  if(typeof(size) == 'undefined'){
-	  size = allow_size;
-  }
-  
-new AjaxUpload($("#"+id+"_button"),{
-		action: "<?php echo site_url('Manager/Publicpicprocess/upload');?>/"+upload,
+    }
+    if(typeof(size) == 'undefined'){
+      size = allow_size;
+    }
+    if(typeof (width) == 'undefined'){
+    width = '';
+    }
+    if(typeof (height) == 'undefined'){
+        height = '';
+    }
+
+    new AjaxUpload($("#"+id+"_button"),{
+		action: "<?php echo site_url(MANAGER_PATH . '/Publicpicprocess/upload');?>/"+upload,
 		type:"POST",
-		data:{ },
+		data:{ width : width, height : height },
 		autoSubmit:true,
 		responseType:'html',//"json",
 		name:upload,
@@ -125,7 +121,6 @@ new AjaxUpload($("#"+id+"_button"),{
 			}else{
 				$('#'+id).val(resp);
 				$('#preview_'+id).attr('src', resp);
-				//alert('图片上传成功');
 			}
 			if(typeof(upload_callback) == 'function'){
 				upload_callback(resp);
@@ -134,67 +129,28 @@ new AjaxUpload($("#"+id+"_button"),{
 		}
 	});
 }
-$(".ajaxUploadBtn").trigger('click');
-
-
-//ajax上传文件 id 输入框ID ，upload指定POST文件对象
-function ajaxUploadFile ( id, upload ) {
-  if(typeof('upload') == 'undefined'){
-      upload = 'default';
-  }
-  new AjaxUpload($("#"+id+"_button"),{
-    action: "<?php echo site_url('Manager/Publicpicprocess/uploadFile');?>/"+upload,
-    type:"POST",
-    data:{ },
-    autoSubmit:true,
-    responseType:'html',//"json",
-    name:upload,
-    onChange: function(file, ext){ },
-    onComplete: function(file, resp){
-      if( typeof(resp['error']) != 'undefined' ){
-        console.log(resp);
-      }else{
-        console.log(resp);
-        $('#'+id).val(resp);
-        if(typeof(upload_callback) == 'function'){
-        	upload_callback(resp);
-        }
-        alert('文件上传成功');
-      }
-    }
-  });
-}
-
-
 
 $(function(){
-	var tdl = $('table').find('thead').find('th').length;
+    $(".ajaxUploadBtn").trigger('click');
+
+    var tdl = $('table').find('thead').find('th').length;
 	$('table').find('tfoot').find('td').attr('colspan', tdl);
 
 	var no_data_td = $('table').find('tbody').find('td').length;
 	if(no_data_td == 1){
 		$('table').find('tbody').find('td').attr('colspan', tdl);
 	}
+
+    $('input[type="button"]').addClass('input-button');
+    $('.form-cont').find('p').css({
+        'color' : 'red',
+        'float' : 'right',
+        'margin-top' : '3px',
+        'font-weight' : 'bold',
+        'font-size' : '14px',
+        'margin-left' : '15px'
+    });
 })
-</script>
-
-<script>
-var curpage = '<?php echo !empty($GLOBALS['curpage']) ? $GLOBALS['curpage'] : ''?>';
-var perpage = '<?php echo !empty($GLOBALS['perpage']) ? $GLOBALS['perpage'] : ''?>';
-
-$(function(){
-	$('input[type="button"]').addClass('input-button');
-	$('.form-cont').find('p').css({
-		'color' : 'red',
-		'float' : 'right',
-		'margin-top' : '3px',
-		'font-weight' : 'bold',
-		'font-size' : '14px',
-		'margin-left' : '15px'
-	});
-})
-
-
 </script>
 
 

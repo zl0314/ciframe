@@ -268,10 +268,18 @@ function tname($tb){
  * 打印数组，
  * @param array $arr
  */
-function PR($arr){
+function P($arr){
     echo '<pre>';
     print_r($arr);
     echo '</pre>';
+}
+/**
+ * 打印数组，并退出
+ * @param array $arr
+ */
+function dd($var){
+    var_dump($var);
+    exit;
 }
 
 //过滤字符

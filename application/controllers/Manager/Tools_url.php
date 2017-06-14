@@ -79,7 +79,9 @@ class Tools_url extends Base_Controller {
                 'field' => '缩略图',
                 'is_primary' => false,
                 'readonly' => true,
-                'tip' => '宽100, 高100'
+                'width' => '300', //指定宽和高后， 上专的图片会自动按比例进行裁剪
+                'height' => '200',
+                'tip' => '宽300, 高200'
             ),
             'interesting' => array(
                 'field' => '兴趣',

@@ -85,7 +85,6 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 
-
 //定义表前缀
 define('DB_PREFIX', '');
 
@@ -104,7 +103,7 @@ define('CACHE_EXP',86400*360);
 |--------------------------------------------------------------------------
 */
 define('SITE_ROOT', substr(str_replace('\\', '/', FCPATH), 0, -1));
-define('ROOT', substr(str_replace('\\', '/', FCPATH), 0, -1));
+define('ROOT', SITE_ROOT);
 
 /*
 |--------------------------------------------------------------------------
@@ -146,7 +145,6 @@ define('SITE_DATETIME', date('Y-m-d H:i:s', TIME_STAMP));
 
 //站点加密key
 define('SITEKEY', 'opiIO#)213588&!jmOPI#&@)#QWjdi');
-
 
 //用户表
 define('USER_TABLE', 'user');

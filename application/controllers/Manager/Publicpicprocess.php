@@ -15,22 +15,13 @@ class PublicPicProcess extends Base_Controller {
 	 * @date 2015-5-12
 	 **/
 	public function upload($upload = ''){
-		$this->config->load('upload_config');
+		$this->config->load('upload');
 		$upload = $upload ? $upload : 'default';
 		$config = $this->config->item($upload);
-		//$create_thumb = request_get('create_thumb') ? request_get('create_thumb') : '';
-		
-		//缩略图配置
-		//$thumb_config = request_get('thumb_config') ? request_get('thumb_config') : 'default';
-		
-		//缩略图前缀
-		//$thumb_prefix = request_get('p') ? request_get('p') : 'thumb_';
-		
-		//当前（$upload）上传配置为空
-		if(empty($config)){
-			$config = $this->config->item('default');
-		}
-		
+
+        if(empty($config)){
+            $config = $this->config->item('default');
+        }
 		//如果指定了上传路径($upload)，改变路径
 		if($upload){
 			$config['upload_path'] = './uploads/'.$upload.'/'.date('Y/m/d/');
@@ -45,15 +36,24 @@ class PublicPicProcess extends Base_Controller {
 		creat_dir_with_filepath($config['upload_path'].$_FILES[$filedata]['name']);
 		$allow_size = str_replace('M','', ini_get('upload_max_filesize'))*1024*1024;
 		if($_FILES[$filedata]['size'] > $allow_size){
-			exit('图片大小不能超过'.ini_get('upload_max_filesize'));
+            exit('图片大小不能超过'.ini_get('upload_max_filesize'));
 		}
-		
+
+
 		$this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload($filedata)){
 			$data = array('error' => $this->upload->display_errors('',''));
 		} else {
 			$imgdata =  $this->upload->data();
 			$data['url'] = trim($config['upload_path'],'.').$imgdata['file_name'];
+			$source_pic = './'. $data['url'];
+			//图片裁剪处理
+            $this->load->library('picthumb');
+            if(_post('width') && _post('height') && file_exists($source_pic)){
+                $thumb = PhpThumbFactory::create($source_pic);
+                $thumb->resize(_post('width'), _post('height'));
+                $thumb->save($source_pic);
+            }
 		}
 		//返回图片URL
 		if(!empty($data['url'])){

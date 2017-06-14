@@ -8,7 +8,7 @@ class My_hook{
      */
     public function system_start($arg = array()){
         $GLOBALS['system_start_time'] = microtime();
-       // echo '<!--start-->';
+//        echo '<!--start-->';
     }
     
     /**
@@ -18,10 +18,7 @@ class My_hook{
     public function system_end($arg = array()){
         $GLOBALS['system_end_time'] = microtime();
         $time_speed = $GLOBALS['system_end_time'] - $GLOBALS['system_start_time'];
-        //echo '<!--<p class="footer">Page rendered in <strong>'.$time_speed.'</strong> seconds. -->';
-        //echo '<p class="footer">Page rendered in <strong>'.$time_speed.'</strong> seconds.';
-//        MyLog::error('page rendered in '.$time_speed);
-       // echo '<!--end-->';
+//        echo '<p class="footer">Page rendered in <strong>'.$time_speed.'</strong> seconds.';
     }
     
 }
