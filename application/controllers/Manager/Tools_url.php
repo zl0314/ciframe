@@ -16,7 +16,7 @@ class Tools_url extends Base_Controller {
         //主键
         $this->primary = 'id';
         //添加时间字段
-        $this->has_addtime = true;
+        $this->has_addtime = false;
 
         //工具类型
         $this->hook = array(
@@ -24,7 +24,10 @@ class Tools_url extends Base_Controller {
             'fdjs' => '房贷计算',
             'shop' => '微店',
         );
-
+        $this->is_index = array(
+            '0' => '否',
+            '1' => '是'
+        );
         //表单属性
         $data = array(
             'id' => array(
@@ -34,32 +37,65 @@ class Tools_url extends Base_Controller {
             ),
             'title' => array(
                 'field' => '标题',
+                'rule' => 'trim',
+                'is_require' => 'false',
                 'type' => 'text',
                 'show_in_search' => true,
                 'search_type' => 'like'
             ),
-            'link_url' => array(
-                'field' => '链接地址',
-                'type' => 'text'
+            'atime' => array(
+                'field' => '时间',
+                'type' => 'time',
+                'is_primary' => false,
+                'show_in_search' => false,
+                'search_type' => 'like',
+                'readonly' => true,
+			    'format' => 'yyyy-mm-dd HH:mm:ss'
+            ),
+            'is_index' => array(
+                'field' => '推荐首页',
+                'type' => 'radio',
+                'is_primary' => false,
+                'show_in_search' => true,
+                'default' => 0,
+                'data' => $this->is_index
             ),
             'hook' => array(
                 'field' => '分类',
                 'type' => 'select',
+                'is_primary' => false,
                 'show_in_search' => true,
                 'data' => $this->hook
             ),
+            'content' => array(
+                'field' => '详情',
+                'is_primary' => false,
+//                'show_in_table' => false,
+                'type' => 'textarea',
+                'editor' => false,
+            ),
+            'img' => array(
+                'type' => 'image',
+                'field' => '缩略图',
+                'is_primary' => false,
+                'readonly' => true,
+                'tip' => '宽100, 高100'
+            ),
+            'interesting' => array(
+                'field' => '兴趣',
+                'type' => 'checkbox',
+                'is_require' => 'false',
+//                'show_in_table' => true,
+                'data' => array('1' => '打球', '2' => '读书', '3' => '音乐', '4' => '跑步')
+            ),
         );
-
         $this->form_data = $data;
-        
         parent::__construct();
-
         $this->checkAdminLogin();
-        //加载Model
-        $this->load->model('Tools_url_model');
     }
 
     public function index(){
+
         $data = get_page('tools_url');
         $list_html = get_list_html($this->form_data, $data);
         $vars = array(
@@ -74,6 +110,7 @@ class Tools_url extends Base_Controller {
      * [添加]
      **/
     public function add($id = 0){
+//        PR($_POST);die;
         $this->saveData();
         $vars = array(
 
