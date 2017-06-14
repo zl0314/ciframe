@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>修改密码</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css">
+    <link rel="stylesheet" type="text/css" href="js/need/layer.css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body>
+    <article class="fixPassWord">
+        <form>
+            <ul>
+                <li>
+                    <label for='inputPhone'>手机号</label>
+                    <input type="text" placeholder="请输入注册手机号" id='inputPhone'></input>
+                </li>
+                <li>
+                    <label for='inputloginpas'>登录密码</label>
+                    <input type="password" placeholder="请输入当前密码" id='inputloginpas'></input>
+                </li>
+                <li>
+                    <label for='inputnewpsd'>设置新密码</label>
+                    <input type="password" placeholder="请输入新密码" id='inputnewpsd'></input>
+                </li>
+            </ul>
+            <input type="button" value="确认修改" class="fixbutton" />
+        </form>
+    </article>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <script type="text/javascript">
+    function checkInfo() {
+        var phone = $("#inputPhone").val();
+        var psd = $("#inputloginpas").val();
+        var code = $("#inputnewpsd").val();
+        if (phone == "") {
+            layer.open({
+                content: "用户名不能为空",
+                btn: "确定"
+            });
+            return false;
+        }
+        if (code == "") {
+            layer.open({
+                content: "验证码不能为空",
+                btn: "确定"
+            });
+            return false;
+        }
+        if (psd == "") {
+            layer.open({
+                content: "密码不能为空",
+                btn: "确定"
+            });
+            return false;
+        }
+
+    }
+
+    $(".fixbutton").click(function() {
+        if (checkInfo() == false) {
+            return;
+        }
+        //注册逻辑
+        if (window.history.length > 1) {
+            window.history.back();
+        }
+    })
+    </script>
+</body>
+
+</html>

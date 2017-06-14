@@ -1,0 +1,214 @@
+{
+    "notification": [{
+
+            "title": "感谢你访问蓝莎集团",
+            "content": "“心系中国、立足英伦、放眼世界”是我们的竞争使命，引领华人贵客和华商企业不断突破创新",
+            "time": "3月6日 20:30",
+            "newState": "0"
+        }, {
+
+            "title": "租赁管理一站式",
+            "content": "家居摆设和屋内物品盘点、招租管理、维修清洁到帮您代缴费用。我们无微不至地照看您的物业",
+            "time": "3月7日 20:30",
+            "newState": "1"
+        }, {
+
+            "title": "中英跨境第一地产投资平台",
+            "content": "家居摆设和屋内物品盘点、招租管理、维修清洁到帮您代缴费用。我们无微不至地照看您的物业",
+            "time": "3月8日 20:30",
+            "newState": "1"
+        }
+
+    ],
+    "collection": [{
+
+            "title": "1伦敦.西敏寺华府",
+            "hoseType": "联排别墅",
+            "houseNumber": "3居",
+            "area": "140~150㎡",
+            "yearrent": "6%",
+            "yearprice": "8%",
+            "price": "112",
+            "imageUrl": "img/mine/collection-1.png"
+        }, {
+
+            "title": "2伦敦.西敏寺华府",
+            "hoseType": "联排别墅",
+            "houseNumber": "3居",
+            "area": "140~150㎡",
+            "yearrent": "6%",
+            "yearprice": "8%",
+            "price": "114",
+            "imageUrl": "img/mine/collection-1.png"
+        }, {
+
+            "title": "3伦敦.西敏寺华府",
+            "hoseType": "联排别墅",
+            "houseNumber": "3居",
+            "area": "140~150㎡",
+            "yearrent": "6%",
+            "yearprice": "8%",
+            "price": "116",
+            "imageUrl": "img/mine/collection-1.png"
+        }
+
+
+    ],
+    "activeList": [{
+        "activeImg": "img/mine/activeList.png",
+        "activeTitle": "预告 I  St. David’s Day威尔士国庆日",
+        "activeStatus": "抢位中",
+        "activeTime": "2017.04.16",
+        "activeAddress": "北京"
+    }, {
+        "activeImg": "img/mine/activeList.png",
+        "activeTitle": "St. David’s Day威尔士国庆日",
+        "activeStatus": "进行中",
+        "activeTime": "2017.04.13",
+        "activeAddress": "上海"
+    }, {
+        "activeImg": "img/mine/activeList.png",
+        "activeTitle": "St. David’s Day威尔士国庆日",
+        "activeStatus": "已结束",
+        "activeTime": "2017.04.12",
+        "activeAddress": "深圳"
+    }],
+    "newsList": [{
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "房产"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "移民"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "税务"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "财务"
+    }],
+    "houseList": [{
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "房产"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "房产"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "房产"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "房产"
+    }],
+     "taxList": [{
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "税务"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "税务"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "税务"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "税务"
+    }],
+     "finicalList": [{
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "财务"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "财务"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "财务"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "财务"
+    }],
+     "yiminList": [{
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "移民"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "移民"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "移民"
+    }, {
+        "imgUrl": "img/pic02.jpg",
+        "title": "海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策",
+        "time": "2017.03.12",
+        "type": "移民"
+    }],
+    "allList":[{
+        "imgUrl":"img/mine/tablist.png",
+        "title":"曼彻斯特媒体城高品质公寓",
+        "housenumber":"2室1卫",
+        "houseares":"56㎡",
+        "housetype":"公寓",
+        "houseYear":"8%",
+        "address":"曼彻斯特·巴特尼学区",
+        "price":"265",
+        "oldPrice":"299"
+        },{
+        "imgUrl":"img/mine/tablist.png",
+        "title":"曼彻斯特媒体城高品质公寓",
+        "housenumber":"2室1卫",
+        "houseares":"56㎡",
+        "housetype":"公寓",
+        "houseYear":"8%",
+        "address":"曼彻斯特·巴特尼学区",
+        "price":"265",
+        "oldPrice":"299"
+        },{
+        "imgUrl":"img/mine/tablist.png",
+        "title":"曼彻斯特媒体城高品质公寓",
+        "housenumber":"2室1卫",
+        "houseares":"56㎡",
+        "housetype":"公寓",
+        "houseYear":"8%",
+        "address":"曼彻斯特·巴特尼学区",
+        "price":"265",
+        "oldPrice":"299"
+        }]
+
+
+}

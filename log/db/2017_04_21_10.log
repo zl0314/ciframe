@@ -1,0 +1,1 @@
+2017-04-21 10:24:09: SELECT * FROM `ls_admin_user` WHERE `user_name` = 'admin'  LIMIT 1

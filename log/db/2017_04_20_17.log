@@ -1,0 +1,8 @@
+2017-04-20 17:29:00: SELECT `setting` FROM `ls_system_setting`  LIMIT 1
+2017-04-20 17:31:12: SELECT * FROM `ls_admin_user` WHERE `user_name` = 'test'  LIMIT 1
+2017-04-20 17:34:56: SELECT * FROM `ls_admin_user` WHERE `user_name` = 'test'  LIMIT 1
+2017-04-20 17:35:19: SELECT * FROM `ls_admin_user` WHERE `user_name` = 'admin'  LIMIT 1
+2017-04-20 17:37:11: SELECT * FROM `ls_admin_user` WHERE `user_name` = 'admin'  LIMIT 1
+2017-04-20 17:37:27: SELECT * FROM `ls_admin_user` WHERE `user_name` = 'admin'  LIMIT 1
+2017-04-20 17:37:29: SELECT * FROM `ls_admin_user` WHERE `user_name` = 'admin'  LIMIT 1
+2017-04-20 17:38:40: SELECT * FROM `ls_admin_user` WHERE `user_name` = 'admin'  LIMIT 1

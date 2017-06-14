@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>走进蓝莎</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script>
+    $(function() {
+        var swiperA = new Swiper('#inbar', { //banner
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            pagination: '#inbar .swiper-pagination'
+        });
+
+        $('#topNav2').scrollToFixed(); //顶部浮动导航
+    });
+    </script>
+</head>
+
+<body class="pb55">
+    <!-- banner -->
+    <div id="inbar" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="javascript:;"><img src="img/pic07.png"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:;"><img src="img/pic07.png"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:;"><img src="img/pic07.png"></a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="eleHide" name="1F"></div>
+    <!-- 顶部浮动导航 -->
+    <nav id="topNav2">
+        <ul flex="box:mean">
+            <li><a href="走进蓝莎.html#1F" name="1F">公司介绍</a></li>
+            <li><a href="走进蓝莎-服务内容.html#1F" name="1F">服务内容</a></li>
+            <li class="curr"><a href="走进蓝莎-团队伙伴.html#1F" name="1F">团队&伙伴</a></li>
+            <li><a href="走进蓝莎-联系我们.html#1F" name="1F">联系我们</a></li>
+        </ul>
+    </nav>
+    <article id="inWrap" class="mb10">
+        <div class="layoutWrap wz13">
+            <p class="pt5 pb15"><img src="img/tit07.gif"></p>
+            <p class="pb5 contentshow">我们房地产专业团队在罗斯柴尔德、德意志银行、摩根大通、第一太平戴维斯等顶级金融机构积累多年，在投资、资本市场、规划、建造开发、估值、资产管理和投资研究领域有丰富经验，经手交易总金额达1500多亿人民币，在英住宅开发超过10亿英镑。</p>
+            <p class="pb20 contentshow">团队成员毕业于世界精英名校如剑桥大学、伦敦政经LSE、伦敦大学UCL、法国高商、人大、复旦等，倾情为客户提供地产一站式服务。</p>
+
+            <p class="wz17 huangse pb15">蓝思颖 Cherrie <br />Director of Lansha</p>
+            <div flex="box:first" class="pb20">
+                
+                <div class="pr15" style="width:35%;">
+                     <img src="img/pic16.jpg"> 
+                </div>
+                <div style="text-align: justify;">
+                    <!-- <p class="wz17 huangse pb15">蓝思颖 Cherrie <br />Director of Lansha</p> -->
+                    <p class="contentshow">曾供职于第一太平戴维斯、基汇资本，全额奖学金被英国利物浦大学录取，2012年获利物浦大学、英国贸易总署最具创业学生奖（全英前30名）,2014年获伦敦政治经济学院（LSE）最佳创业楷模奖，并由学院背书办理优秀毕业生企业家移民资格。毕业于伦敦政治经济学院地产金融专业。</p>
+                </div>
+            </div>
+            <p class="pt5 pb15"><img src="img/tit08.gif"></p>
+            <p><img src="img/pic17.jpg"></p>
+        </div>
+    </article>
+    <!-- 底部浮动导航 -->
+    <nav id="inBottomNav">
+        <ul flex="box:mean">
+            <li>
+                <a href="index.html">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="curr">
+                <a href="走进蓝莎.html">
+                    <p>走进蓝莎</p>
+                </a>
+            </li>
+            <li>
+                <a href="全英布局.html">
+                    <p>全英布局</p>
+                </a>
+            </li>
+            <li>
+                <a href="最新动态.html">
+                    <p>最新动态</p>
+                </a>
+            </li>
+            <li>
+                <a href="个人中心.html">
+                    <p>个人中心</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

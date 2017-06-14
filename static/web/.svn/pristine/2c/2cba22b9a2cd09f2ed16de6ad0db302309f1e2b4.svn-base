@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="x-rim-auto-match" content="none">
+<meta name="keywords" content="英国蓝莎置业" />
+<meta name="description" content="英国蓝莎置业" />
+<meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+<meta name="author" content="www.to-dream.com,拓之林" />
+<title>走进蓝莎</title>
+<link href="style/global.css" rel="stylesheet" type="text/css">
+<link href="style/layout.css" rel="stylesheet" type="text/css">
+<link href="style/flex.css" rel="stylesheet" type="text/css">
+<link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+<link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+<link href="style/animate.css" rel="stylesheet" type="text/css" />
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/klass.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script>
+    $(function(){
+        var swiperA = new Swiper('#inbar', { //banner
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            pagination: '#inbar .swiper-pagination'
+        });
+
+        $('#topNav2').scrollToFixed(); //顶部浮动导航
+    });
+</script>
+</head>
+
+<body class="pb55">
+    <!-- banner -->
+    <div id="inbar" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="javascript:;"><img src="img/pic07.png"></a></div>
+            <div class="swiper-slide"><a href="javascript:;"><img src="img/pic07.png"></a></div>
+            <div class="swiper-slide"><a href="javascript:;"><img src="img/pic07.png"></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="eleHide" name="1F"></div>
+    <!-- 顶部浮动导航 -->
+    <nav id="topNav2">
+        <ul flex="box:mean">
+            <li><a href="走进蓝莎.html#1F" name="1F">公司介绍</a></li>
+            <li><a href="走进蓝莎-服务内容.html#1F" name="1F">服务内容</a></li>
+            <li><a href="走进蓝莎-团队伙伴.html#1F" name="1F">团队&伙伴</a></li>
+            <li class="curr"><a href="走进蓝莎-联系我们.html#1F" name="1F">联系我们</a></li>
+        </ul>
+    </nav>
+    <article id="inWrap" class="mb10">
+        <div class="layoutWrap wz13 mb15">
+            <p class="wz15 huangse pb20 contentshow">非常期待与您交流<br />如果您想了解更多企业或项目信息，敬请联系</p>
+            <p class="wz15 shense pb5 contentshow">上海办公室</p>
+            <p class="contentshow">地址：上海市静安区乌鲁木齐北路207号</p>
+            <p class="contentshow">电话：+86 (0)21-60100508</p>
+            <p class="pb20 contentshow">邮箱：info@lanshaproperty.com</p>
+            <p class="wz15 shense pb5 contentshow">伦敦办公室</p>
+            <p class="contentshow">Address: 107 Cheapside, London, EC2V 6DN</p>
+            <p class="contentshow">Contact: +44(0)20 77968690</p>
+            <p class="contentshow">Email: info@lanshaproperty.com</p>
+        </div>
+        <div class="layoutWrap wz13">
+            <p class="wz16 huangse pb10">在线留言</p>
+            <dl class="studyMode" flex="box:first">
+                <dt flex="cross:center" style="padding-left:0; font-size: 15px;">您的姓名</dt>
+                <dd><input type="text" /></dd>
+            </dl>
+            <dl class="studyMode" flex="box:first">
+                <dt flex="cross:center" style="padding-left:0; font-size: 15px;">联系电话</dt>
+                <dd><input type="text" /></dd>
+            </dl>
+            <dl class="studyMode" flex="box:first">
+                <dt flex="cross:center" style="padding-left:0; font-size: 15px;">留言内容</dt>
+                <dd><textarea name="" id="" cols="30" rows="10"></textarea></dd>
+            </dl>
+            <dl class="studyMode" flex="box:first">
+                <dt flex="cross:center" style="padding-left:0;">　　　　</dt>
+                <dd><input type="button" value="提交" class="studyModeBtn" /></dd>
+            </dl>
+        </div>
+    </article>
+    <!-- 底部浮动导航 -->
+    <nav id="inBottomNav">
+        <ul flex="box:mean">
+            <li><a href="index.html"><p>首页</p></a></li>
+            <li class="curr"><a href="走进蓝莎.html"><p>走进蓝莎</p></a></li>
+            <li><a href="全英布局.html"><p>全英布局</p></a></li>
+            <li><a href="最新动态.html"><p>最新动态</p></a></li>
+            <li><a href="个人中心.html"><p>个人中心</p></a></li>
+        </ul>
+    </nav>
+</body>
+</html>

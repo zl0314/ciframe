@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>周边配套</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="js/need/layer.css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body>
+    <!-- 周边配套 -->
+    <article class="cycle-brief">
+        <section class="cycleTitle">
+            <h1 class="first-title">周边配套</h1>
+            <ul class="cycle-info">
+                <li class="cycleLi">
+                    <span class="first">医院：</span>
+                    <dl class="detailUL">
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                    </dl>
+                </li>
+                  <li class="cycleLi">
+                    <span class="first">银行：</span>
+                    <dl class="detailUL">
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                    </dl>
+                </li>
+                  <li class="cycleLi">
+                    <span class="first">超市：</span>
+                    <dl class="detailUL">
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                    </dl>
+                </li>
+                  <li class="cycleLi">
+                    <span class="first">公交站：</span>
+                    <dl class="detailUL">
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                    </dl>
+                </li>
+                  <li class="cycleLi">
+                    <span class="first">地铁站：</span>
+                    <dl class="detailUL">
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                    </dl>
+                </li>
+                  <li class="cycleLi">
+                    <span class="first">火车站：</span>
+                    <dl class="detailUL">
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                    </dl>
+                </li>
+                  <li class="cycleLi">
+                    <span class="first">公园：</span>
+                    <dl class="detailUL">
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                        <dd><span>Lerdish Hospital</span> <span>2613米</span></dd>
+                    </dl>
+                </li>
+            </ul>
+        </section>
+    </article>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>地图</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyDNdzDZlgUgk-4-lXsCEsFQiU_vkJHk99I&signed=true&callback=initMap" async defer></script>
+    <style type="text/css">
+    html,body,#mapFull{
+        width: 100%;
+        height: 100%;
+     }
+    </style>
+    
+</head>
+
+<body>
+       
+    <div id="mapFull"></div>
+ 
+    <script type="text/javascript">
+    // 周边地图
+
+    function initMap() {
+        var uluru = {
+            lat: 51.507012,
+            lng: -0.139342
+        };
+        var uluru2 = {
+            lat: 51.517012,
+            lng: -0.129342
+        };
+        var map = new google.maps.Map(document.getElementById('mapFull'), {
+            zoom: 10,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+        var infowindow = new google.maps.InfoWindow({
+            content: "111Hello World!"
+        });
+        infowindow.open(map, marker);
+        marker.addListener('click', function() {
+            // window.location.href = 'http://www.baidu.com/';
+            window.location.href = '项目详情.html';
+        });
+
+        var marker2 = new google.maps.Marker({
+            position: uluru2,
+            map: map
+        });
+        var infowindow2 = new google.maps.InfoWindow({
+            content: "222Hello World!"
+        });
+        infowindow2.open(map, marker2);
+        marker2.addListener('click', function() {
+            // window.location.href = 'http://www.google.com/';
+            window.location.href = '项目详情.html';
+        });
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+2017-06-01 18:02:37: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 18:02:37: SELECT * FROM `tools_url`  LIMIT 10

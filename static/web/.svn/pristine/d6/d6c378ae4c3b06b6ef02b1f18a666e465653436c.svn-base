@@ -1,0 +1,188 @@
+﻿html{
+	font-size: 62.5%;
+	font-family: Helvetica;
+}
+html * {
+    outline: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+	background: #fbfaf5;
+	color: #666;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 20px;
+	margin: 0 auto;
+    font-family: "Roboto,Helvetica";
+}
+
+.eleHide{
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border: none;
+    overflow: hidden;
+}
+.checkbox{
+    padding-left: 18px;
+    display: inline-block;
+    cursor: pointer;
+    background: url("../img/checkbox.gif") left center no-repeat;
+    margin-right: 5px;
+}
+.checkbox.cur{
+    background: url("../img/checkboxcurr.gif") left center no-repeat;
+}
+.radio{
+    padding-left: 18px;
+    display: inline-block;
+    cursor: pointer;
+    background: url("../img/radio.png") left center no-repeat;
+    margin-right: 5px;
+}
+.radio.cur{
+    background: url("../img/radiocurr.png") left center no-repeat;
+}
+.select{
+    width: 100%;
+    position: relative;
+    border-radius: 1px;
+    background: #fff;
+    height: 35px;
+    line-height: 34px;
+}
+.select dt{
+    padding: 0 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    color: #f59601;
+}
+.select dt i{
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    right: 4px;
+    top: 50%;
+    margin-top: -16px;
+    background: url("../img/select.png") center no-repeat;
+}
+.select dt.cur i{
+    background: url("../img/selectcurr.png") center no-repeat;
+}
+.select dd{
+    position: absolute;
+    z-index: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    left: 0;
+    top: 102%;
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+.select dd a{
+    display: block;
+    color: #000;
+    white-space: normal;
+    padding: 0 10px;
+    background: #fff;
+    cursor: pointer;
+	border: 1px solid #ccc;
+	border-top: 0;
+}
+.select dd a:hover{
+    background: #ccc;
+}
+a{color:inherit;text-decoration:none;}
+hr {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+.rightArrow:after{
+    content: '';
+    width: 10px;
+    height: 18px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -9px;
+    background: url(../img/ico01.png) left top no-repeat;
+    -webkit-background-size: 10px 18px;
+    background-size: 10px 18px;
+}
+.pb60{padding-bottom: 60px;}
+.pb55{padding-bottom: 55px;}
+.pt60{padding-top: 60px;}
+.pt55{padding-top: 55px;}
+.shense,.shense a{color: #333;}
+.zhengchangse,.zhengchangse a{color: #666;}
+.heise,.heise a{color: #000;}
+.qianse,.qianse a{color: #999;}
+.baise,.baise a{color: #fff;}
+.huangse,.huangse a{color: #d2bd7f;}
+.baisedg{background: #fff;}
+.chengse,.chengse a{color: #fe6634;}
+.wrap1{padding: 10px;}
+.wrap2{padding: 15px;}
+#inBottomNav{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    background: #fff;
+    z-index: 100;
+}
+#inBottomNav ul{}
+#inBottomNav ul li{
+    text-align: center;
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #c4c4c4;
+}
+#inBottomNav ul li a{
+    display: block;
+    padding-top: 30px;
+    background-position: center 4px;
+    background-repeat: no-repeat;
+    -webkit-background-size: 23px 24px;
+    background-size: 23px 24px;
+}
+#inBottomNav ul li.curr{
+    color: #d2bd7f;
+}
+#inBottomNav ul li:nth-of-type(1) a{
+    background-image: url(../img/btnIco01.png);
+}
+#inBottomNav ul li:nth-of-type(1).curr a{
+    background-image: url(../img/btnIco02.png);
+}
+#inBottomNav ul li:nth-of-type(2) a{
+    background-image: url(../img/btnIco11.png);
+}
+#inBottomNav ul li:nth-of-type(2).curr a{
+    background-image: url(../img/btnIco12.png);
+}
+#inBottomNav ul li:nth-of-type(3) a{
+    background-image: url(../img/btnIco21.png);
+}
+#inBottomNav ul li:nth-of-type(3).curr a{
+    background-image: url(../img/btnIco22.png);
+}
+#inBottomNav ul li:nth-of-type(4) a{
+    background-image: url(../img/btnIco31.png);
+}
+#inBottomNav ul li:nth-of-type(4).curr a{
+    background-image: url(../img/btnIco32.png);
+}
+#inBottomNav ul li:nth-of-type(5) a{
+    background-image: url(../img/btnIco41.png);
+}
+#inBottomNav ul li:nth-of-type(5).curr a{
+    background-image: url(../img/btnIco42.png);
+}
+

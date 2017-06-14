@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>个人中心</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="js/need/layer.css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body>
+    <article class="mineCenter">
+        <ul>
+            <li class="headerImageli">
+                <a href="登录.html">
+                    <img src="img/mine/min-defHead.png" />
+                    <span class="username">未登录</span>
+                </a>
+            </li>
+            <li class="notificationli">
+                <a href="最新通知.html">
+                    <i></i>
+                    <span>最新通知</span>
+                </a>
+            </li>
+            <li class="clubli">
+                <a href="javaScript:;" id="clubA">
+                    <i></i>
+                    <span>L Club</span>
+                </a>
+            </li>
+            <li class="myhouseli">
+                <a href="javaScript:;" id='myhouse'>
+                    <i></i>
+                    <span>我的房产</span>
+                </a>
+            </li>
+            <li class="myrent">
+                <a href="javaScript:;" id="myrent">
+                    <i></i>
+                    <span>我的租赁</span>
+                </a>
+            </li>
+            <li class="mycollection">
+                <a href="javaScript:;" id='mycollection'>
+                    <i></i>
+                    <span>我的收藏</span>
+                </a>
+            </li>
+            <li class="commQuestion">
+                <a href="常见问题.html">
+                    <i></i>
+                    <span>常见问题</span>
+                </a>
+            </li>
+        </ul>
+    </article>
+    <aside class="asideJs">
+        <ul>
+            <li><a href="javascript:;" class="first">印花税计算器</a></li>
+            <li><a href="http://m.uoolu.com/helper/calculate/" class="second">房贷计算器</a></li>
+            <li><a href="javascript:;" class="third">购房能力评估</a></li>
+            <li><a href="http://m.uoolu.com/helper/rate/" class="four">国际汇率换算</a></li>
+        </ul>
+    </aside>
+    <!-- 底部浮动导航 -->
+    <nav id="inBottomNav">
+        <ul flex="box:mean">
+            <li>
+                <a href="index.html">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="走进蓝莎.html">
+                    <p>走进蓝莎</p>
+                </a>
+            </li>
+            <li>
+                <a href="全英布局.html">
+                    <p>全英布局</p>
+                </a>
+            </li>
+            <li>
+                <a href="最新动态.html">
+                    <p>最新动态</p>
+                </a>
+            </li>
+            <li class="curr">
+                <a href="个人中心.html">
+                    <p>个人中心</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <script type="text/javascript">
+    var loginStatus = localStorage.getItem('loginStatus');
+    if (loginStatus == '1') {
+        $('.username').html('已经登录');
+        $('.username').parent().attr('href', '个人信息.html');
+    }
+
+    // 点击L Club
+    $('#clubA').click(function() {
+        var loginStatus = localStorage.getItem('loginStatus');
+        if (loginStatus == '0') {
+            $(this).attr('href', 'club.html');
+        } else {
+            $(this).attr('href', 'loginclub.html');
+        }
+    });
+
+    // 收藏
+    $('#mycollection').click(function() {
+        var loginStatus = localStorage.getItem('loginStatus');
+        if (loginStatus == '0') {
+            layer.open({
+                content: '登录后查看',
+                btn: ['确定', '取消'],
+                yes: function(index) {
+
+                    layer.close(index);
+                    window.location = '登录.html';
+                }
+            });
+        } else {
+            $(this).attr('href', '我的收藏.html');
+        }
+    });
+    // 我的房产
+    $('#myhouse').click(function() {
+        var loginStatus = localStorage.getItem('loginStatus');
+        if (loginStatus == '0') {
+            layer.open({
+                content: '登录后查看',
+                btn: ['确定', '取消'],
+                yes: function(index) {
+
+                    layer.close(index);
+                    window.location = '登录.html';
+                }
+            });
+        } else {
+            $(this).attr('href', '我的房产.html');
+        }
+    });
+      // 我的房产
+    $('#myrent').click(function() {
+        var loginStatus = localStorage.getItem('loginStatus');
+        if (loginStatus == '0') {
+            layer.open({
+                content: '登录后查看',
+                btn: ['确定', '取消'],
+                yes: function(index) {
+
+                    layer.close(index);
+                    window.location = '登录.html';
+                }
+            });
+        } else {
+            $(this).attr('href', '我的租赁.html');
+        }
+    });
+    </script>
+</body>
+
+</html>

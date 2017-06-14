@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>个人信息</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css">
+    <link rel="stylesheet" type="text/css" href="js/need/layer.css">
+    <link rel="stylesheet" type="text/css" href="js/need/layer.css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body>
+    <article class="myInfoCenter">
+        <form>
+            <ul>
+                <li class="headerImageli">
+                    <span class="username">头像</span>
+                    <iframe src="canvas/upload6.html" frameborder="0"></iframe>
+                    <img src="img/mine/min-defHead.png" class="face" />
+                </li>
+                <li class="user-name">
+                    <a href="inputfile.html" style="display: block;">
+                        <label for='inputname'>姓名</label>
+                        <input type="text" placeholder="未设置" id='inputname' disabled></input>
+                    </a>
+                </li>
+                <li class="user-phone">
+                    <a href="inputfile.html" style="display: block;">
+                        <label for='inputtel'>手机</label>
+                        <input type="text" placeholder="未设置" id='inputtel' disabled></input>
+                    </a>
+                </li>
+                <li class="user-email">
+                    <a href="inputfile.html" style="display: block;">
+                        <label for='inputemail'>邮箱</label>
+                        <input type="text" placeholder="未设置" id='inputemail' disabled></input>
+                    </a>
+                </li>
+                <li class="user-address">
+                    <a href="inputfile.html" style="display: block;">
+                        <label for='inputaddress'>地址</label>
+                        <input type="text" placeholder="未设置" disabled id='inputaddress'></input>
+                    </a>
+                </li>
+                <li class="user-sex">
+                    <label for='inputsex'>性别</label>
+                    <select name="sex" id="inputsex">
+                        <option selected value="1">男</option>
+                        <option value="2">女</option>
+                        <option value="3">保密</option>
+                    </select>
+                </li>
+                <li class="user-birth">
+                    <label for='inputbirth'>生日</label>
+                    <input type="Date" placeholder="未设置" id='inputbirth' name="userbirth" value="" id="birth" onchange="selectbirth(this.value)" />
+                    <input type="text" class="textBirth" value="" />
+                </li>
+                <li class="user-changepas">
+                    <a href="修改密码.html"> 修改密码
+
+               </a>
+                </li>
+                <li class="user-back">
+                    <a href="javaScript:;" id="logOutBtn">退出登录 </a>
+                </li>
+            </ul>
+            <!-- <input type="button" value="保存" id="keepBtn" /> -->
+        </form>
+    </article>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <script type="text/javascript">
+    // 选择生日后隐藏
+    function selectbirth(e) {
+        $('.textBirth').val(e);
+        $('#inputbirth').val("");
+
+    };
+
+    // 头像
+    function up_face(base64) {
+        //ajax保存
+        // $.ajax({
+        //     url:"<?php echo site_url('member/upload_pic')?>",
+        //     type : 'post',
+        //     data : {pic:base64},
+        //     dataType : 'json',
+        //     success : function (data) {
+        //         if(data.result.error == 1){
+        //             tusi(data.result.msg);
+        //             location.reload();
+        //         }else{
+        //             tusi(data.result.msg)
+        //         }
+        //     }
+        // })
+        // console.log(base64)
+        $('.face').attr('src', base64);
+    }
+
+    //存储登录的状态
+    function storageLoginStatus(item) {
+        if (typeof(Storage) !== "undefined") {
+            // Store
+            localStorage.setItem("loginStatus", item);
+        }
+    }
+
+    // 退出登录按钮
+    $('#logOutBtn').bind("click", function() {
+        layer.open({
+            content: '您确定要退出登录吗?',
+            btn: ['确定', '取消'],
+            yes: function(index) {
+                storageLoginStatus('0');
+                layer.close(index);
+                window.location = 'index.html';
+            }
+        });
+    });
+
+    // 检测信息
+    // function checkInfo() {
+    //     var usrname = $("#inputname").val();
+    //     var phone = $("#inputtel").val();
+    //     var email = $("#inputemail").val();
+    //     var address = $('#inputaddress').val();
+    //     var sex = $("#inputsex").val();
+    //     var birth = $("#inputbirth").val();
+    //     if (usrname == "") {
+    //         layer.open({
+    //             content: "用户名不能为空",
+    //             btn: "确定"
+    //         });
+    //         return false;
+    //     }
+
+    //     if (phone == "") {
+    //         layer.open({
+    //             content: "手机号码不能为空",
+    //             btn: "确定"
+    //         });
+    //         return false;
+    //     }
+
+    //     var regexg = /0?(13|14|15|18)[0-9]{9}/;
+    //     if (regexg.test(phone) == false) {
+
+    //         layer.open({
+    //             content: "手机号码输入错误",
+    //             btn: "确定"
+    //         })
+
+    //         return false;
+    //     }
+    // }
+
+    // // 保存按钮
+    // $("#keepBtn").click(function() {
+    //     if (checkInfo() == false) {
+    //         return;
+    //     }
+    //     if (window.history.length > 1) {
+    //         window.history.back();
+    //     }
+    // });
+    </script>
+</body>
+
+</html>

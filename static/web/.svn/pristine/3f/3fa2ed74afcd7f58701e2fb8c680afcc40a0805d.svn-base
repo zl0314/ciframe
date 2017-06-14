@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="appoint">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>预约资讯</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="js/need/layer.css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body class="appoint">
+    <article class="appointMent">
+        <form>
+            <!-- 预约 -->
+            <p>请提交您的预约信息，便于我们的置业顾问与您联系！</p>
+            <ul>
+                <li>
+                    <label class="static-title" for="yourname">您的姓名</label>
+                    <input id="yourname" name="username" type="text" />
+                </li>
+                <li>
+                    <label class="static-title" for="yourPhone">联系电话</label>
+                    <input id="yourPhone" name="yourPhone" type="text" />
+                </li>
+                <li>
+                    <label class="static-title" for="yourtime">预约时间</label>
+                    <input id="yourtime" name="yourtime" type="date" class="appointdate" />
+                </li>
+                <li class="appointInfoLi">
+                    <label class="static-title" for="appointInfo">预约说明</label>
+                    <textarea id="appointInfo" name="appointInfo"></textarea>
+                </li>
+                <li class="submitLi">
+                    <label class="static-title" for="appointInfo"></label>
+                    <input type="button" value="提交" class="submitBtn" />
+                </li>
+            </ul>
+           
+        </form>
+    </article>
+    <script type="text/javascript" src="js/layer.js"></script>
+    </script>
+</body>
+
+</html>

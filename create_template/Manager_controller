@@ -1,0 +1,83 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Author       : Aaron Zhang
+ * createTime   : {time}
+ * Description  : {description}
+ *
+ */
+
+class {class} extends Base_Controller {
+
+    public function __construct()  {
+
+        //表名
+        $this->tb = '{table}';
+
+        //主键
+        $this->primary = '{primary}';
+
+        //是否有添加时间字段[ture|false]
+        $this->has_addtime = {addtime};
+
+        //表单属性
+        $data = {table_data};
+
+        $this->form_data = $data;
+
+        parent::__construct();
+
+        $this->checkAdminLogin();
+    }
+
+    public function index(){
+        $data = get_page('{table}');
+        $list_html = get_list_html($this->form_data, $data);
+        $vars = array(
+            'list_html' => $list_html,
+        );
+
+        $this->tpl->assign($vars);
+        $this->tpl->display();
+    }
+
+    /**
+     * [添加记录]
+     **/
+    public function add(){
+        $this->saveData();
+        $vars = array(
+
+        );
+
+        $this->tpl->assign($vars);
+        $this->tpl->display();
+    }
+
+    /**
+     * [编辑记录]
+     */
+    public function edit($id= 0){
+        $id = intval($id);
+        $row = $this->getRow($id);
+
+        $this->saveData($row);
+
+        $vars = array(
+
+        );
+        $this->tpl->assign($vars);
+        $this->tpl->display();
+    }
+
+    //排序
+    public function public_listorder(){
+        $this->commonListOrder('{listorder_field}');
+    }
+
+    //删除
+    public function delete(){
+        $this->commonDelete();
+    }
+}

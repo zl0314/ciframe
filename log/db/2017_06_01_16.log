@@ -1,0 +1,20 @@
+2017-06-01 16:10:32: SELECT * FROM `admin_user` WHERE `user_name` = 'admin'  LIMIT 1
+2017-06-01 16:10:59: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 16:10:59: SELECT * FROM `tools_url`  LIMIT 10
+2017-06-01 16:11:09: SELECT * FROM `tools_url` WHERE `id` = 8  LIMIT 1
+2017-06-01 16:11:17: SELECT * FROM `tools_url` WHERE `id` = 8  LIMIT 1
+2017-06-01 16:46:52: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 16:46:52: SELECT * FROM `tools_url`  LIMIT 10
+2017-06-01 16:46:58: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 16:46:58: SELECT * FROM `tools_url`  LIMIT 10
+2017-06-01 16:47:46: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 16:47:46: SELECT * FROM `tools_url`  LIMIT 10
+2017-06-01 16:48:58: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 16:48:58: SELECT * FROM `tools_url`  LIMIT 10
+2017-06-01 16:49:09: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 16:49:09: SELECT * FROM `tools_url`  LIMIT 10
+2017-06-01 16:49:48: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 16:49:48: SELECT * FROM `tools_url`  LIMIT 10
+2017-06-01 16:51:06: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-06-01 16:51:06: SELECT * FROM `tools_url`  LIMIT 10
+2017-06-01 16:51:10: SELECT * FROM `tools_url` WHERE `id` = 7  LIMIT 1

@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>我的租赁</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script>
+    $(function() {
+        var swiperA = new Swiper('#inbar', { //banner
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            pagination: '#inbar .swiper-pagination'
+        });
+    });
+    // 户型，点击查看大图
+    (function(window, $, PhotoSwipe) {
+        $(document).ready(function() {
+            var options = {};
+            $("#Gallery a").photoSwipe(options);
+        });
+    }(window, window.jQuery, window.Code.PhotoSwipe));
+    </script>
+</head>
+
+<body>
+    <header class="myhouseHeader">
+        <a href="javascript:;" id="headpull">凯若岛屿<span></span></a>
+        <div class="housepull">
+            <ul class="pullUl">
+                <li><a href="javascript:;" class="itemclick curr">凯若岛屿</a></li>
+                <li><a href="javascript:;" class="itemclick">怀特岛</a></li>
+                <li><a href="javascript:;" class="itemclick">泽西岛</a></li>
+                <li><a href="javascript:;" class="itemclick">奥克尼群岛</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- banner -->
+    <div id="inbar" class="swiper-container">
+        <div class="swiper-wrapper" id="Gallery">
+            <div class="swiper-slide">
+                <a href="img/inbar01.jpg"><img src="img/inbar01.jpg"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="img/inbar01.jpg"><img src="img/inbar01.jpg"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="img/inbar01.jpg"><img src="img/inbar01.jpg"></a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <aside class="desInfo">
+        <p>英国伦敦的Reading(雷丁镇)，152号，凯若岛屿，8号楼，1037号房间，三室一厅</p>
+    </aside>
+    <section class="rentSection">
+        <ul class="clubClassify">
+            <li><a href="我的租赁.html">房东须知</a></li>
+            <li><a href="test.pdf" id="zfht">租房合同</a></li>
+            <li><a href="javascript:;" class="curr">租赁管理</a></li>
+            <li><a href="我的租赁-相关费用.html">相关费用</a></li>
+        </ul>
+    </section>
+    <section class="rentContentInfo">
+        <ul>
+            <li>1、房屋出租前应当对房屋进行必要的整理和修饰，使房屋整洁、美观，并准备几件必用的家具，给房客家的感觉对房客的有关信息，如身份证房屋出租前应当对房屋进行必要的整理和修饰，使房屋整洁、美观，并准备几件必用的家具，给房客家的感觉对房客的有关信息，如身份证</li>
+            <li>2、房屋出租前应当对房屋进行必要的整理和修饰，使房屋整洁、美观，并准备几件必用的家具，给房客家的感觉对房客的有关信息，如身份证房屋出租前应当对房屋进行必要的整理和修饰，使房屋整洁、美观，并准备几件必用的家具，给房客家的感觉对房客的有关信息，如身份证</li>
+            <li>3、房屋出租前应当对房屋进行必要的整理和修饰，使房屋整洁、美观，并准备几件必用的家具，给房客家的感觉对房客的有关信息，如身份证房屋出租前应当对房屋进行必要的整理和修饰，使房屋整洁、美观，并准备几件必用的家具，给房客家的感觉对房客的有关信息，如身份证</li>
+            <li>4、房屋出租前应当对房屋进行必要的整理和修饰，使房屋整洁、美观，并准备几件必用的家具，给房客家的感觉对房客的有关信息，如身份证房屋出租前应当对房屋进行必要的整理和修饰，使房屋整洁、美观，并准备几件必用的家具，给房客家的感觉对房客的有关信息，如身份证</li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+    $(function() {
+        $('#headpull').click(function() {
+            var displaystaty = $('.housepull').css('display');
+            if (displaystaty == 'none') {
+                $('.housepull').css('display', 'block');
+            } else {
+                $('.housepull').css('display', 'none');
+            }
+        });
+
+        $('.itemclick').click(function(e) {
+            var that = $(this);
+            $('.pullUl li a').each(function() {
+                var _this = $(this);
+                var classname = _this.attr('class');
+                if (classname.indexOf('curr') > 0) {
+                    _this.attr('class', 'itemclick');
+                }
+            })
+            that.addClass('curr');
+            var n = e.currentTarget.innerHTML;
+            console.log(n);
+            $('#headpull').html(n + '<span></span>');
+
+            that.parent('li').parent('.pullUl').parent('.housepull').css('display', 'none');
+
+        });
+
+        $('#zfht').click(function() {
+            var that = $(this);
+            $('.clubClassify li a').each(function() {
+                var _this = $(this);
+                var classname = _this.attr('class');
+                console.log(classname);
+                if (classname != null && classname == 'curr') {
+                    _this.removeClass();
+                }
+            });
+            that.addClass('curr');
+        });
+
+    })
+    </script>
+</body>
+
+</html>

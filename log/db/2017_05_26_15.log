@@ -1,0 +1,50 @@
+2017-05-26 15:11:14: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:11:14: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:11:27: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:11:27: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:31:46: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:31:46: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:32:00: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:32:00: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:32:16: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:32:16: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:33:51: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:33:51: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:33:59: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:33:59: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:36:58: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:36:58: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:39:25: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:39:25: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:41:30: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:41:30: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:42:51: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:42:51: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:46:25: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:46:25: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:46:31: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:46:31: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:46:54: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:46:54: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:47:18: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:47:18: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:48:24: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:48:24: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:48:39: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:48:39: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:48:52: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:48:52: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:49:01: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:49:01: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:49:29: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:49:29: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:52:06: SELECT * FROM `tools_url` WHERE `id` = 7  LIMIT 1
+2017-05-26 15:52:41: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:52:41: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:52:45: SELECT * FROM `tools_url` WHERE `id` = 7  LIMIT 1
+2017-05-26 15:53:09: SELECT * FROM `tools_url` WHERE `id` = 7  LIMIT 1
+2017-05-26 15:53:54: SELECT * FROM `tools_url` WHERE `id` = 7  LIMIT 1
+2017-05-26 15:54:30: SELECT * FROM `tools_url` WHERE `id` = 7  LIMIT 1
+2017-05-26 15:54:35: SELECT Count(*) as cnt FROM `tools_url`  LIMIT 1
+2017-05-26 15:54:35: SELECT * FROM `tools_url`  LIMIT 10
+2017-05-26 15:54:38: SELECT * FROM `tools_url` WHERE `id` = 9  LIMIT 1

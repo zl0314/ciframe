@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="x-rim-auto-match" content="none">
+<meta name="keywords" content="英国蓝莎置业" />
+<meta name="description" content="英国蓝莎置业" />
+<meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+<meta name="author" content="www.to-dream.com,拓之林" />
+<title>学在英国</title>
+<link href="style/global.css" rel="stylesheet" type="text/css">
+<link href="style/layout.css" rel="stylesheet" type="text/css">
+<link href="style/flex.css" rel="stylesheet" type="text/css">
+<link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+<link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+<link href="style/animate.css" rel="stylesheet" type="text/css" />
+<link href="style/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/klass.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<link rel="stylesheet" href="style/dropload.css">
+<script type="text/javascript" src="js/dropload.min.js"></script>
+<script>
+    $(function(){
+        var swiperA = new Swiper('#studyBar', { //banner
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            pagination: '#studyBar .swiper-pagination'
+        });
+    });
+    $(window).load(function(){
+        // 页数
+        var page = 0;
+        // 每页展示6个
+        var size = 5;
+        // 图片个数
+        // dropload
+        $('#inWrap').dropload({
+            scrollArea: window,
+            loadDownFn: function(me) {
+                page++;
+                // 拼接HTML
+                var result = '';
+                $.ajax({
+                    type: 'GET',
+                    url: 'json/more.json?page=' + page + '&size=' + size,
+                    dataType: 'json',
+                    success: function(data) {
+                        var data = data.studyList;
+                        var arrLen = data.length;
+                        if (arrLen > 0) {
+                            for (var i = 0; i < arrLen; i++) {
+                                if(data[i].ad == 0){
+                                    result  += '<li>'
+                                                +'<a href="' + data[i].link + '" class="qcfd">'
+                                                    +'<img src="' + data[i].pic + '">'
+                                                    +'<p class="cc2hyc hg24">' + data[i].title + '</p>'
+                                                    +'<p class="qianse pt10">' + data[i].tip + '</p>'
+                                                +'</a>'
+                                            +'</li>'
+                                }else{
+                                    result  += '<li class="ad">'
+                                                +'<a href="' + data[i].link + '" class="qcfd">'
+                                                    +'<img src="' + data[i].pic + '">'
+                                                +'</a>'
+                                            +'</li>'
+                                }
+                            }
+                            // 如果没有数据
+                        } else {
+                            // 锁定
+                            me.lock();
+                            // 无数据
+                            me.noData();
+                        }
+                        // 为了测试，延迟1秒加载
+                        setTimeout(function() {
+                            // 插入数据到页面，放到最后面
+                            $('.studyList').append(result);
+                            // 每次数据插入，必须重置
+                            me.resetload();
+                        }, 1000);
+                    },
+                    error: function(xhr, type) {
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    });
+</script>
+</head>
+
+<body class="pt50">
+    <!-- 顶部浮动导航 -->
+    <nav id="topNav">
+        <ul flex="box:mean">
+            <li class="curr"><a href="学在英国.html">热点</a></li>
+            <li><a href="学在英国.html">幼儿培训</a></li>
+            <li><a href="学在英国.html">初高中</a></li>
+            <li><a href="学在英国.html">本科研究生</a></li>
+            <li><a href="学在英国.html">夏令营</a></li>
+        </ul>
+    </nav>
+    <!-- banner -->
+    <div id="studyBar" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="新闻资讯-详情.html"><span><p class="cc1hyc wz15 bold">看电影，带你去英国看奥黛丽赫本看电影，带你去英国看奥黛丽赫本</p></span><img src="img/inbar01.jpg"></a></div>
+            <div class="swiper-slide"><a href="新闻资讯-详情.html"><span><p class="cc1hyc wz15 bold">看电影，带你去英国看奥黛丽赫本看电影，带你去英国看奥黛丽赫本</p></span><img src="img/inbar01.jpg"></a></div>
+            <div class="swiper-slide"><a href="新闻资讯-详情.html"><span><p class="cc1hyc wz15 bold">看电影，带你去英国看奥黛丽赫本看电影，带你去英国看奥黛丽赫本</p></span><img src="img/inbar01.jpg"></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <article id="inWrap">
+        <ul class="studyList">
+            <!-- <li>
+                <a href="学在英国-详情.html" class="qcfd">
+                    <img src="img/pic05.jpg">
+                    <p class="cc2hyc hg24">少儿英语培训欧美专业外教张口SHOW出国际范儿少儿英语培训欧美专业外教张口SHOW出国际范儿</p>
+                    <p class="qianse pt10">幼儿培训</p>
+                </a>
+            </li>
+            <li class="ad">
+                <a href="学在英国-详情.html" class="qcfd">
+                    <img src="img/pic06.jpg">
+                </a>
+            </li> -->
+        </ul>
+    </article>
+</body>
+</html>

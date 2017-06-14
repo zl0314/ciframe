@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>英国蓝莎置业</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css" />
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body class="pb55">
+    <article id="inWrap">
+        <section class="Investment">
+            <ul class="clubClassify">
+                <li><a href="javascript:;" class="curr">全部</a></li>
+                <li><a href="投资干货-房产篇.html">房产篇</a></li>
+                <li><a href="投资干货-税务篇.html">税务篇</a></li>
+                <li><a href="投资干货-财务篇.html">财务篇</a></li>
+                <li><a href="投资干货-移民篇.html">移民篇</a></li>
+            </ul>
+        </section>
+        <section class="inWrap1">
+            <dl class="inMain2">
+             <!--    <dd>
+                    <a href="投资详情界面.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><span class="typeInvest" style="background: url(img/mine/houseIcon.png) 0% center no-repeat;background-size: 15px 15px">房产</span><span class="lastSpan">2017.03.12</span></p>
+                    </a>
+                </dd> -->
+            </dl>
+        </section>
+    </article>
+    <link rel="stylesheet" href="style/dropload.css">
+    <script type="text/javascript" src="js/dropload.min.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        // 页数
+        var page = 0;
+        // 每页展示6个
+        var size = 5;
+        // 图片个数
+        // dropload
+        $('.inWrap1').dropload({
+            scrollArea: window,
+            loadDownFn: function(me) {
+                page++;
+                // 拼接HTML
+                var result = '';
+                $.ajax({
+                    type: 'GET',
+                    url: 'json/mine.json?page=' + page + '&size=' + size,
+                    dataType: 'json',
+                    success: function(data) {
+                        var data = data.newsList;
+                        var arrLen = data.length;
+                        if (arrLen > 0) {
+                            for (var i = 0; i < arrLen; i++) {
+
+                                var spanT = "";
+                               
+                                if (data[i].type == "房产") {
+
+                                    spanT = '<span class="typeInvest" style="background: url(img/mine/houseIcon.png) 0% center no-repeat;background-size: 15px 15px">' + data[i].type + '</span>';
+
+                                } else if (data[i].type == "税务") {
+
+                                    spanT = '<span class="typeInvest" style="background: url(img/mine/taxIcon.png) 0% center no-repeat;background-size: 15px 15px">' + data[i].type + '</span>';
+
+                                } else if (data[i].type == "移民") {
+
+                                    spanT = '<span class="typeInvest" style="background: url(img/mine/immigrantIcon.png) 0% center no-repeat;background-size: 15px 15px">' + data[i].type + '</span>';
+
+                                } else if(data[i].type == "财务"){
+                                   
+                                   spanT = '<span class="typeInvest" style="background: url(img/mine/financeIcon.png) 0% center no-repeat;background-size: 15px 15px">' + data[i].type + '</span>';
+                                }
+
+                                result += '<dd><a href="投资详情界面.html" class="block qcfd"><div class="right ml15 inMain2Pic"><img src="' + data[i].imgUrl + '"></div>' + '<p class="cc2hyc wz16 bold shense hg24">' + data[i].title + '</p>' + '<p class="inMain2Tip wz12 qianse hg20">'+spanT+'<span class="lastSpan">' + data[i].time + '</span></p></a> </dd>';
+
+                            }
+                            // 如果没有数据
+                        } else {
+
+                            // 锁定
+                            me.lock();
+
+                            // 这里是数据为空，有空白页
+                            // $('body').addClass("setcolor");
+
+                            // $('.voidmessage').css('display', 'block');
+
+                            // $('.newNotification').css('display', 'none');
+
+                            // 无数据
+                            me.noData();
+                        }
+                        // 为了测试，延迟1秒加载
+                        setTimeout(function() {
+                            // 插入数据到页面，放到最后面
+                            $('.inMain2').append(result);
+
+                            // 每次数据插入，必须重置
+                            me.resetload();
+                        }, 1000);
+                    },
+                    error: function(xhr, type) {
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>最新动态</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css" />
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script>
+    $(function() {
+        var swiperA = new Swiper('#inbar', { //banner
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            pagination: '#inbar .swiper-pagination'
+        });
+
+        $('#inTopNav').scrollToFixed(); //顶部浮动导航
+
+        var swiperB = new Swiper('#inAd', { //投资干货广告
+            pagination: '#inAd .swiper-pagination'
+        });
+
+        var swiperC = new Swiper('#inStory', { //英伦故事
+            slidesPerView: 'auto',
+            paginationClickable: true,
+            spaceBetween: 5
+        });
+    });
+    </script>
+</head>
+
+<body class="pb55">
+    <!-- banner -->
+    <div id="inbar" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide newsStatus">
+                <a href="新闻资讯-详情.html"><img src="img/mine/newsImg.png"></a>
+                <p>英国启动“脱欧”程序的信函正式递交欧盟,由此,英国与欧盟将正式展开“分手”谈判。</p>
+            </div>
+            <div class="swiper-slide newsStatus">
+                <a href="新闻资讯-详情.html"><img src="img/mine/newsImg.png"></a>
+                <p>英国启动“脱欧”程序的信函正式递交欧盟,由此,英国与欧盟将正式展开“分手”谈判。</p>
+            </div>
+            <div class="swiper-slide newsStatus">
+                <a href="新闻资讯-详情.html"><img src="img/mine/newsImg.png"></a>
+                <p>英国启动“脱欧”程序的信函正式递交欧盟,由此,英国与欧盟将正式展开“分手”谈判。</p>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 顶部导航 -->
+    <nav id="inTopNav">
+        <ul flex="box:mean">
+            <li>
+                <a href="新闻资讯.html"><img src="img/mine/newsInfo.png">
+                    <p>新闻资讯</p>
+                </a>
+            </li>
+            <li>
+                <a href="精彩活动.html"><img src="img/mine/active2.png">
+                    <p>精彩活动</p>
+                </a>
+            </li>
+            <li>
+                <a href="英伦故事.html"><img src="img/mine/englishEssen.png">
+                    <p>英伦故事</p>
+                </a>
+            </li>
+            <li>
+                <a href="投资干货.html"><img src="img/mine/news4.png">
+                    <p>投资干货</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- 新闻资讯模块 -->
+    <article id="inWrap">
+        <section class="inWrap1">
+            <dl class="inMain2">
+                <!-- <dt class="inTit01 rightArrow"><a href="全英布局.html">本月精选</a></dt> -->
+                <dd>
+                    <a href="新闻资讯-详情.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><span>新闻资讯</span><span class="lastSpan">2017.03.12</span></p>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="新闻资讯-详情.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><span>新闻资讯</span><span class="lastSpan">2017.03.12</span></p>
+                    </a>
+                </dd>
+            </dl>
+        </section>
+        <section class="inWrap1">
+            <dl class="inMain2">
+                <dd>
+                    <a href="活动详情.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><span>活动时间:2017.03.28</span><span class="lastSpan">上海</span></p>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="活动详情.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><span>活动时间:2017.03.28</span><span class="lastSpan">上海</span></p>
+                    </a>
+                </dd>
+            </dl>
+        </section>
+       
+        <!-- 广告 -->
+        <section class="inWrap1 advert">
+            <dl class="inMain3">
+                <dd>
+                    <div id="inStory" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="英伦故事-详情.html"><img src="img/pic04.jpg">
+                                    <p class="cc2hyc">英国老街Old Street：我有酒你有故事</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="英伦故事-详情.html"><img src="img/pic04.jpg">
+                                    <p class="cc2hyc">英国老街Old Street：我有酒你有故事</p>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="英伦故事-详情.html"><img src="img/pic04.jpg">
+                                    <p class="cc2hyc">英国老街Old Street：我有酒你有故事</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+         <!-- 投资干货 -->
+        <section class="inWrap1">
+            <dl class="inMain2">
+                <!-- <dt class="inTit01 rightArrow"><a href="投资干货.html">投资干货</a></dt> -->
+                  <!-- 广告 -->
+                <dd class="inAdWrap">
+                    <div id="inAd" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="http://www.baidu.com/"><img src="img/pic03.jpg"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="http://www.baidu.com/"><img src="img/pic03.jpg"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="http://www.baidu.com/"><img src="img/pic03.jpg"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </dd>
+                <dd>
+                    <a href="投资详情界面.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><img src="img/ico03.png">房产　2017.03.12</p>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="投资详情界面.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><img src="img/ico03.png">房产　2017.03.12</p>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="投资详情界面.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><img src="img/ico03.png">房产　2017.03.12</p>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="投资详情界面.html" class="block qcfd">
+                        <div class="right ml15 inMain2Pic"><img src="img/pic02.jpg"></div>
+                        <p class="cc2hyc wz16 bold shense hg24">海外房东税务政策海外房东税务政策海外房东税务政策(NRL)解析海外人阿士的征税政策</p>
+                        <p class="inMain2Tip wz12 qianse hg20"><img src="img/ico03.png">房产　2017.03.12</p>
+                    </a>
+                </dd>
+              
+            </dl>
+        </section>
+        <!-- 底部浮动导航 -->
+        <nav id="inBottomNav">
+            <ul flex="box:mean">
+                <li>
+                    <a href="index.html">
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="走进蓝莎.html">
+                        <p>走进蓝莎</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="全英布局.html">
+                        <p>全英布局</p>
+                    </a>
+                </li>
+                <li class="curr">
+                    <a href="最新动态.html">
+                        <p>最新动态</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="个人中心.html">
+                        <p>个人中心</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+</body>
+
+</html>

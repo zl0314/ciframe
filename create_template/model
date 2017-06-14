@@ -1,0 +1,15 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+/**
+ * @auther Aaron Zhang
+ * @data {$time}
+ * @description : {$description}
+ */
+class {class}_model extends MY_Model{
+	public $tb;
+	public $primary;
+	function __construct(){
+		parent::__construct();
+		$this->tb = '{table}';
+		$this->primary = '{primary}';
+	}
+}

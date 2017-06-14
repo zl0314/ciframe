@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>全英布局</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script>
+    $(function() {
+        var swiperA = new Swiper('#inbar', { //banner
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+            pagination: '#inbar .swiper-pagination'
+        });
+
+        $("#topScreen li").not(":last").click(function() { //筛选按钮
+            if ($(this).hasClass("curr")) {
+                $(this).removeClass("curr");
+                $("html,body").css("overflow", "auto");
+                $(".screenHbg,.screenWrap").hide();
+            } else {
+                $(this).addClass("curr").siblings().removeClass("curr");
+                $("html,body").css("overflow", "hidden");
+                $(".screenHbg").show();
+                var index = $(this).index();
+                $(".screenWrap").eq(index).show().siblings(".screenWrap").hide();
+            }
+        });
+
+        $("#city li").click(function() { //城市列表按钮
+            $(this).addClass("curr").siblings().removeClass("curr");
+            $("#topScreen li").eq(0).find("span").html($(this).text());
+            $("#topScreen li").eq(0).removeClass("curr");
+            $("html,body").css("overflow", "auto");
+            $(".screenHbg,.screenWrap").hide();
+        });
+
+        $("#total li").not(":last").click(function() { //总价列表按钮
+            $(this).addClass("curr").siblings().removeClass("curr");
+            $("#topScreen li").eq(1).find("span").html($(this).text());
+            $("#topScreen li").eq(1).removeClass("curr");
+            $("html,body").css("overflow", "auto");
+            $(".screenHbg,.screenWrap").hide();
+        });
+        $(".totalBtn").click(function() { //总价列表确定按钮
+            var startPrice = $(this).parent().find(".startPrice").val();
+            var endPrice = $(this).parent().find(".endPrice").val();
+            console.log("startPrice:" + startPrice + "---endPrice:" + endPrice)
+            if (startPrice == '' || endPrice == '' || startPrice >= endPrice) {
+                alert("请填写正确的价格区间！");
+            } else {
+                $("#topScreen li").eq(1).find("span").html(startPrice + '万-' + endPrice + '万');
+                $("#topScreen li").eq(1).removeClass("curr");
+                $("html,body").css("overflow", "auto");
+                $(".screenHbg,.screenWrap").hide();
+            }
+
+        });
+
+        $("#type li").click(function() { //类型列表按钮
+            $(this).addClass("curr").siblings().removeClass("curr");
+            $("#topScreen li").eq(2).find("span").html($(this).text());
+            $("#topScreen li").eq(2).removeClass("curr");
+            $("html,body").css("overflow", "auto");
+            $(".screenHbg,.screenWrap").hide();
+        });
+
+        $("#sort li").click(function() { //排序列表按钮
+            $(this).addClass("curr").siblings().removeClass("curr");
+            $("#topScreen li").eq(3).find("span").html($(this).text());
+            $("#topScreen li").eq(3).removeClass("curr");
+            $("html,body").css("overflow", "auto");
+            $(".screenHbg,.screenWrap").hide();
+        });
+    });
+    </script>
+</head>
+
+<body class="pb55">
+    <div class="screenHbg"></div>
+    <!-- 顶部筛选 -->
+    <nav id="topScreen">
+        <ul flex="box:last">
+            <li><span class="cc1hyc">城市</span><i></i></li>
+            <li><span class="cc1hyc">总价</span><i></i></li>
+            <li><span class="cc1hyc">类型</span><i></i></li>
+            <li><span class="cc1hyc">排序</span><i></i></li>
+            <li>
+                <a href="全英布局-地图.html"><img src="img/ico05.png"></a>
+            </li>
+        </ul>
+    </nav>
+    <!-- 城市 -->
+    <div class="screenWrap">
+        <div id="city">
+            <ul>
+                <li class="curr"><a href="javascript:;">全英国</a></li>
+                <li><a href="javascript:;">伦敦</a></li>
+                <li><a href="javascript:;">利兹</a></li>
+                <li><a href="javascript:;">达灵顿</a></li>
+                <li><a href="javascript:;">利物浦</a></li>
+                <li><a href="javascript:;">卢顿</a></li>
+                <li><a href="javascript:;">盖茨黑德</a></li>
+                <li><a href="javascript:;">曼彻斯特</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 总价 -->
+    <div class="screenWrap">
+        <div id="total">
+            <ul>
+                <li class="curr"><a href="javascript:;">全部</a></li>
+                <li><a href="javascript:;">100万以下</a></li>
+                <li><a href="javascript:;">100万-300万</a></li>
+                <li><a href="javascript:;">300万-500万</a></li>
+                <li><a href="javascript:;">800万-1000万</a></li>
+                <li><a href="javascript:;">1000万以上</a></li>
+                <li class="totalInput">
+                    <input type="button" value="确定" class="totalBtn" />
+                    <input type="number" class="startPrice" /><span class="pl5 pr5">-</span>
+                    <input type="number" class="endPrice" /><span class="pl5">万元</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 类型 -->
+    <div class="screenWrap">
+        <div id="type">
+            <ul>
+                <li class="curr"><a href="javascript:;">全部</a></li>
+                <li><a href="javascript:;">独栋别墅</a></li>
+                <li><a href="javascript:;">公寓</a></li>
+                <li><a href="javascript:;">联排别墅</a></li>
+                <li><a href="javascript:;">商业地产</a></li>
+                <li><a href="javascript:;">教育资源</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 排序 -->
+    <div class="screenWrap">
+        <div id="sort">
+            <ul>
+                <li class="curr"><a href="javascript:;">默认排序</a></li>
+                <li><a href="javascript:;">近一年房价从高到低</a></li>
+                <li><a href="javascript:;">租金收入从高到低</a></li>
+                <li><a href="javascript:;">价格从高到低</a></li>
+                <li><a href="javascript:;">价格从低到高</a></li>
+                <li><a href="javascript:;">首付比例从低到高</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- banner -->
+    <div id="inbar" class="swiper-container addtg">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="团购.html"><img src="img/inbar01.jpg"></a>
+                <a href="团购.html" class="tgstatus">正在团购</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="团购.html"><img src="img/inbar01.jpg"></a>
+                <a href="团购.html" class="tgstatus">正在团购</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="团购.html"><img src="img/inbar01.jpg"></a>
+                <a href="团购.html" class="tgstatus">正在团购</a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <article id="inWrap">
+        <dl class="inMain1">
+            <dt class="inTit01"><a href="全英布局.html">本月精选</a></dt>
+            <dd>
+                <a href="项目详情.html" class="block">
+                    <img src="img/pic01.jpg">
+                    <p class="wz17 hg24 bold pt10 shense">曼彻斯特媒体城高品质公寓</p>
+                    <p class="hg24"><span class="right qianse"><i class="wz20 bold huangse en">265</i>万英镑</span>2室1卫 / 56㎡ / 公寓 年化收益8%</p>
+                    <p class="addIcon qianse wz12 hg28">伦敦·圣约翰伍德</p>
+                </a>
+            </dd>
+            <dd>
+                <a href="项目详情.html" class="block">
+                    <img src="img/pic01.jpg">
+                    <p class="wz17 hg24 bold pt10 shense">曼彻斯特媒体城高品质公寓</p>
+                    <p class="hg24"><span class="right qianse"><i class="wz20 bold huangse en">265</i>万英镑</span>2室1卫 / 56㎡ / 公寓 年化收益8%</p>
+                    <p class="addIcon qianse wz12 hg28">伦敦·圣约翰伍德</p>
+                </a>
+            </dd>
+            <dd>
+                <a href="项目详情.html" class="block">
+                    <img src="img/pic01.jpg">
+                    <p class="wz17 hg24 bold pt10 shense">曼彻斯特媒体城高品质公寓</p>
+                    <p class="hg24"><span class="right qianse"><i class="wz20 bold huangse en">265</i>万英镑</span>2室1卫 / 56㎡ / 公寓 年化收益8%</p>
+                    <p class="addIcon qianse wz12 hg28">伦敦·圣约翰伍德</p>
+                </a>
+            </dd>
+        </dl>
+        <div class="checkAll">
+            <a href="全英布局-全部列表.html">查看全部</a>
+        </div>
+    </article>
+    <!-- 底部浮动导航 -->
+    <nav id="inBottomNav">
+        <ul flex="box:mean">
+            <li>
+                <a href="index.html">
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="走进蓝莎.html">
+                    <p>走进蓝莎</p>
+                </a>
+            </li>
+            <li class="curr">
+                <a href="全英布局.html">
+                    <p>全英布局</p>
+                </a>
+            </li>
+            <li>
+                <a href="最新动态.html">
+                    <p>最新动态</p>
+                </a>
+            </li>
+            <li>
+                <a href="个人中心.html">
+                    <p>个人中心</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

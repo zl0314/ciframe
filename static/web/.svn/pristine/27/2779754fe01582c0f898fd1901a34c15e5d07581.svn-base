@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="keywords" content="英国蓝莎置业" />
+    <meta name="description" content="英国蓝莎置业" />
+    <meta name="Copyright" content="英国蓝莎置业版权所有,未经允许,禁止转载,侵权必究" />
+    <meta name="author" content="www.to-dream.com,拓之林" />
+    <title>最新通知</title>
+    <link href="style/global.css" rel="stylesheet" type="text/css">
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/flex.css" rel="stylesheet" type="text/css">
+    <link href="style/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="style/photoswipe.css" rel="stylesheet" type="text/css" />
+    <link href="style/animate.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style/mineStyle.css">
+    <link rel="stylesheet" type="text/css" href="js/need/layer.css">
+    <script type="text/javascript" src="js/klass.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <link rel="stylesheet" href="style/dropload.css">
+    <script type="text/javascript" src="js/dropload.min.js"></script>
+</head>
+
+<body>
+    <div class="voidmessage">
+        <img src="img/mine/voidnotif.png" />
+        <p>暂无通知</p>
+    </div>
+    <article class="newNotification">
+        <ul class="notifUl">
+            <!-- <li>
+                <a href="通知详情.html">
+                    <img src="img/mine/mynotification.png" />
+                    <dl>
+                        <dt>感谢你访问蓝莎集团</dt>
+                        <dd>心系中国、立足英伦、放眼世界”是我们的竞争使命，引领华人贵客和华商企业不断突破创新</dd>
+                        <dd class="time">3月6日 20:30</dd>
+                        <span class="notif"></span>
+                    </dl>
+                </a>
+                <span class="deldd"></span>
+            </li> -->
+        </ul>
+    </article>
+    <script type="text/javascript" src="js/layer.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        // 页数
+        var page = 0;
+        // 每页展示6个
+        var size = 5;
+        // 图片个数
+        // dropload
+        $('.newNotification').dropload({
+            scrollArea: window,
+            loadDownFn: function(me) {
+                page++;
+                // 拼接HTML
+                var result = '';
+                $.ajax({
+                    type: 'GET',
+                    url: 'json/mine.json?page=' + page + '&size=' + size,
+                    dataType: 'json',
+                    success: function(data) {
+                        var data = data.notification;
+                        var arrLen = data.length;
+                        if (arrLen > 0) {
+                            for (var i = 0; i < arrLen; i++) {
+
+                                var signT = "";
+                                if (data[i].newState == 0) {
+                                    signT = '<span></span>';
+                                } else {
+                                    signT = '<span class="notif"></span>';
+                                }
+                                // 
+                                result += '<li><a href="通知详情.html"><img src="img/mine/mynotification.png"/><dl><dt>' + data[i].title + '</dt><dd>' + data[i].content + '</dd><dd class="time">' + data[i].time + '</dd>' + signT + '</dl></a><span class="deldd"></span></li>'
+
+                            }
+                            // 如果没有数据
+                        } else {
+
+                            // 锁定
+                            me.lock();
+
+                            // 这里是数据为空，有空白页
+                            $('body').addClass("setcolor");
+
+                            $('.voidmessage').css('display', 'block');
+
+                            $('.newNotification').css('display', 'none');
+
+                            // 无数据
+                            me.noData();
+                        }
+                        // 为了测试，延迟1秒加载
+                        setTimeout(function() {
+                            // 插入数据到页面，放到最后面
+                            $('.notifUl').append(result);
+                            $('.notifUl li .deldd').click(function(event) {
+                                    event.stopPropagation();
+                                    var that = $(this);
+                                    layer.open({
+                                        content: '确定删除通知?',
+                                        btn: ['确定', '取消'],
+                                        yes: function(event, layero) {
+                                            that.parent("li").remove();;
+                                            layer.close(event);
+                                        }
+                                    })
+                                })
+                                // 每次数据插入，必须重置
+                            me.resetload();
+                        }, 1000);
+                    },
+                    error: function(xhr, type) {
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

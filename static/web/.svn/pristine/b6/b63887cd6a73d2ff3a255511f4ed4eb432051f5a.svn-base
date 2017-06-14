@@ -1,0 +1,2728 @@
+/*********************个人中心  分割线**********/
+
+
+/*个人中心界面，所有的li都包含的右箭头按钮*/
+
+.mineCenter ul li {
+    background: #fff url(../img/ico01.png) 95% center no-repeat;
+    background-size: 8px 15px;
+}
+
+.mineCenter ul li a {
+    display: block;
+    height: 100%;
+    position: relative;
+    font-size: 16px;
+}
+
+
+/*头像的li*/
+
+.mineCenter .headerImageli {
+    height: 70px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+
+/*默认头像*/
+
+.mineCenter .headerImageli img {
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+}
+
+
+/*头像中的span*/
+
+.mineCenter .headerImageli span {
+    line-height: 70px;
+    margin-left: 10px;
+}
+
+
+/*个人中心列表的li*/
+
+.mineCenter .notificationli,
+.mineCenter .clubli,
+.mineCenter .myhouseli,
+.mineCenter .myrent,
+.mineCenter .mycollection,
+.mineCenter .commQuestion {
+    height: 47px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*个人中心列表li中的左侧图标*/
+
+.mineCenter .notificationli i,
+.mineCenter .clubli i,
+.mineCenter .myhouseli i,
+.mineCenter .myrent i,
+.mineCenter .mycollection i,
+.mineCenter .commQuestion i {
+    display: inline-block;
+    width: 22px;
+    height: 23px;
+    padding: 10px;
+}
+
+
+/*左侧图标的单个赋值*/
+
+.mineCenter .notificationli i {
+    background: url(../img/mine/min-notif.png) center center no-repeat;
+    background-size: 22px 23px;
+}
+
+.mineCenter .clubli i {
+    background: url(../img/mine/lclub.png) center center no-repeat;
+    background-size: 22px 20px;
+}
+
+.mineCenter .myhouseli i {
+    background: url(../img/mine/min-house.png) center center no-repeat;
+    background-size: 20px 22px;
+}
+
+.mineCenter .myrent i {
+    background: url(../img/mine/houseRent.png) center center no-repeat;
+    background-size: 20px 22px;
+}
+
+.mineCenter .mycollection i {
+    background: url(../img/mine/min-collect.png) center center no-repeat;
+    background-size: 22px 20px;
+}
+
+.mineCenter .commQuestion i {
+    background: url(../img/mine/min-commQues.png) center center no-repeat;
+    background-size: 21.5px 21.5px;
+}
+
+
+/*列表的标题*/
+
+.mineCenter .notificationli span,
+.mineCenter .clubli span,
+.mineCenter .myhouseli span,
+.mineCenter .myrent span,
+.mineCenter .mycollection span,
+.mineCenter .commQuestion span {
+    position: absolute;
+    top: 14px;
+}
+
+
+/*我的租赁和常见问题距离底部距离*/
+
+.mineCenter .myrent,
+.mineCenter .commQuestion {
+    margin-bottom: 10px;
+}
+
+
+/*计算器*/
+
+.asideJs {
+    margin-bottom: 60px;
+}
+
+.asideJs ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    font-size: 13px;
+    padding: 0 10px;
+}
+
+.asideJs ul li {
+    width: 25%;
+    height: 70px;
+}
+
+.asideJs ul li a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    line-height: 110px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/*印花税*/
+
+.asideJs ul li a.first {
+    background: #fff url(../img/mine/min-yhsjsq.png) center 15px no-repeat;
+    background-size: 26px 23.5px;
+}
+
+
+/*房贷计算器*/
+
+.asideJs ul li a.second {
+    background: #fff url(../img/mine/min-fdjsq.png) center 15px no-repeat;
+    background-size: 22px 22px;
+}
+
+
+/*购房能力*/
+
+.asideJs ul li a.third {
+    background: #fff url(../img/mine/min-gfnlpg.png) center 15px no-repeat;
+    background-size: 22px 22px;
+}
+
+
+/*国际汇率*/
+
+.asideJs ul li a.four {
+    background: #fff url(../img/mine/min-gjhlhs.png) center 15px no-repeat;
+    background-size: 22px 27px;
+}
+
+
+/*项目详情界面的计算器*/
+
+.asideJs ul li a.firstdetail {
+    background: #fff url(../img/mine/yhsdetail.png) center 15px no-repeat;
+    background-size: 26px 23.5px;
+}
+
+
+/*房贷计算器*/
+
+.asideJs ul li a.seconddetail {
+    background: #fff url(../img/mine/fdjsqdetail.png) center 15px no-repeat;
+    background-size: 22px 22px;
+}
+
+
+/*购房能力*/
+
+.asideJs ul li a.thirddetail {
+    background: #fff url(../img/mine/gfnldetail.png) center 15px no-repeat;
+    background-size: 22px 22px;
+}
+
+
+/*国际汇率*/
+
+.asideJs ul li a.fourdetail {
+    background: #fff url(../img/mine/gjhsdetail.png) center 15px no-repeat;
+    background-size: 22px 27px;
+}
+
+
+/*以上是个人中心*/
+
+
+/*********************************以下是登录界面*****************************/
+
+
+/*登录欢迎图*/
+
+.loginHeader {
+    width: 100%;
+    height: 218px;
+    background: url(../img/mine/welcome.png) center center no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*登录欢迎图的蒙层*/
+
+.loginHeader div {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+/*欢迎语*/
+
+.loginHeader div h1 {
+    line-height: 218px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/*用户名密码*/
+
+.loginForm section input {
+    width: 100%;
+    text-decoration: none;
+    height: 45px;
+    border: 0;
+    border-bottom: 1px solid #f1f1f1;
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+
+/*登录按钮*/
+
+.loginForm input[type='button'] {
+    width: 90%;
+    padding: 0 15px;
+    margin-top: 26px;
+    margin-left: 5%;
+    height: 50px;
+    border-radius: 2px;
+    background: #d2bd7f;
+    color: #fff;
+    font-size: 15px;
+    border: 0;
+    border-bottom: 2px solid #b7a265;
+}
+
+
+/*注册找回密码*/
+
+.loginForm div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+
+/*上面是登录*/
+
+
+/*********************************用户协议*********************************/
+
+.UserAgreement {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.UserAgreement section {
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 15px;
+}
+
+.UserAgreement section p.title {
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.UserAgreement dl {
+    padding-bottom: 10px;
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.UserAgreement dl dt {
+    padding-bottom: 10px;
+    font-size: 17px;
+}
+
+.UserAgreement dl dd {
+    padding-bottom: 15px;
+}
+
+.UserAgreement dl.lastdl {
+    margin-bottom: 0px;
+}
+
+
+/*********************************以下是注册界面*****************************/
+
+
+/**************************忘记密码**css完全复用*********************/
+
+.registerA ul li {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #f4f5f5;
+}
+
+.registerA ul li input {
+    height: 49px;
+    width: 100%;
+    padding: 0 15px;
+    border: 0;
+    margin-top: 0;
+    font-size: 15px;
+}
+
+.registerA ul li .registerPhone {
+    width: 64%;
+    padding-right: 0px;
+}
+
+
+/*发送验证码*/
+
+.registerA ul li .sendCode {
+    width: 25%;
+    padding: 0px;
+    height: 35px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 35px;
+    border-radius: 2px;
+    border-bottom: 0px;
+    background-color: #cacaca;
+    color: #fff;
+}
+
+
+/*是否同意*/
+
+.registerA ul .lastAgree {
+    background-color: transparent;
+    border-bottom: 0;
+    position: relative;
+}
+
+.registerA ul .lastAgree input {
+    background: transparent;
+    border: 0px;
+    border-radius: 0px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    z-index: 2;
+    width: 0px;
+    height: 23px;
+}
+
+
+/*同意按钮*/
+
+.registerA ul .lastAgree .registAgreeT {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ddd;
+    line-height: 12px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 2px;
+}
+
+.registerA ul .lastAgree span {
+    display: block;
+    position: absolute;
+    left: 40px;
+    top: 18px;
+}
+
+
+/*注册按钮*/
+
+.registerBtn {
+    width: 90%;
+    height: 50px;
+    margin: 10px 5% 0;
+    border: 0px;
+    border-radius: 2px;
+    background-color: #d2bd7f;
+    border-bottom: 2px solid #b7a265;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+
+/************************个人信息界面*************************/
+
+.myInfoCenter ul li {
+    background: #fff url(../img/ico01.png) 95% center no-repeat;
+    background-size: 8px 15px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+
+
+/*头像*/
+
+.myInfoCenter .headerImageli {
+    height: 50px;
+    padding-right: 30px;
+    position: relative;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*头像 字*/
+
+.myInfoCenter .headerImageli span {
+    line-height: 50px;
+}
+
+
+/*头像 上传头像插件*/
+
+.myInfoCenter .headerImageli iframe {
+    /*width: 45px;*/
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    left: 0;
+}
+
+
+/*头像 图片*/
+
+.myInfoCenter .headerImageli img {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+
+/*列表 样式*/
+
+.myInfoCenter .user-name,
+.myInfoCenter .user-phone,
+.myInfoCenter .user-email,
+.myInfoCenter .user-address,
+.myInfoCenter .user-sex,
+.myInfoCenter .user-birth,
+.myInfoCenter .user-changepas,
+.myInfoCenter .user-back {
+    height: 45px;
+    border-bottom: 1px solid #f1f1f1;
+    position: relative;
+}
+
+
+/*列表 label*/
+
+.myInfoCenter ul li {
+    font-size: 15px;
+}
+
+.myInfoCenter .user-name label,
+.myInfoCenter .user-phone label,
+.myInfoCenter .user-email label,
+.myInfoCenter .user-address label,
+.myInfoCenter .user-sex label,
+.myInfoCenter .user-birth label {
+    line-height: 45px;
+}
+
+
+/*列表 input*/
+
+.myInfoCenter .user-name a,
+.myInfoCenter .user-phone a,
+.myInfoCenter .user-email a,
+.myInfoCenter .user-address a {
+    display: block;
+    width: 100%;
+}
+
+.myInfoCenter .user-name input,
+.myInfoCenter .user-phone input,
+.myInfoCenter .user-email input,
+.myInfoCenter .user-address input,
+.myInfoCenter .user-birth input {
+    margin-right: 20px;
+    width: 70%;
+    text-align: right;
+    border: 0;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.myInfoCenter .user-name input,
+.myInfoCenter .user-phone input,
+.myInfoCenter .user-email input,
+.myInfoCenter .user-address input {
+    float: right;
+    margin-top: 7px;
+    height: 30px;
+}
+
+
+/*修改密码 退出登录*/
+
+.myInfoCenter .user-changepas a,
+.myInfoCenter .user-back a {
+    display: block;
+    width: 100%;
+    line-height: 45px;
+}
+
+
+/*性别 select*/
+
+.myInfoCenter .user-sex select {
+    width: 70%;
+    margin-right: 20px;
+    border: 0px;
+    background: clear;
+    background: transparent;
+    direction: rtl;
+    font-size: 15px;
+}
+
+
+/*生日*/
+
+.myInfoCenter .user-birth .textBirth {
+    position: absolute;
+    top: 0px;
+    right: 7px;
+    height: 100%;
+    z-index: 1;
+}
+
+.myInfoCenter .user-birth #inputbirth {
+    position: relative;
+    background: transparent;
+    z-index: 2;
+}
+
+
+/*间隔*/
+
+.myInfoCenter .user-name,
+.myInfoCenter .user-address,
+.myInfoCenter .user-birth {
+    margin-bottom: 10px;
+}
+
+.myInfoCenter input[type='button'] {
+    width: 100%;
+    height: 45px;
+    text-decoration: none;
+    border: 0;
+    background-color: #d2bd7f;
+    border-bottom: 2px solid #b7a265;
+    margin-bottom: 0px;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #fff;
+}
+
+
+/*****************以下是修改密码界面******************/
+
+.fixPassWord form ul li {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*label*/
+
+.fixPassWord form ul li label {
+    line-height: 45px;
+    margin-left: 15px;
+}
+
+
+/*输入框*/
+
+.fixPassWord form ul li input {
+    width: 65%;
+    border: 0;
+    text-decoration: none;
+    text-align: right;
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+
+/*修改密码保存按钮*/
+
+.fixPassWord .fixbutton {
+    margin: 25px 15px 0 15px;
+    border: 0;
+    width: 90%;
+    text-decoration: none;
+    height: 45px;
+    text-align: center;
+    color: #fff;
+    background: #d2bd7f;
+    border-bottom: 2px solid #b7a265;
+    font-size: 15px;
+}
+
+
+/*****************以下是最新通知界面******************/
+
+.newNotification ul li {
+    position: relative;
+}
+
+.newNotification ul li a {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.newNotification ul li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.newNotification ul li dl {
+    padding-left: 10px;
+    width: 84%;
+}
+
+
+/*标题*/
+
+.newNotification ul li dl dt {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #000;
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.newNotification ul li dl dd {
+    color: #555555;
+    width: 90%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+
+/*时间*/
+
+.newNotification ul li dl dd.time {
+    padding-top: 5px;
+    font-size: 13px;
+    color: #999999;
+}
+
+
+/*小红点*/
+
+.newNotification ul li dl .notif {
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    top: 15px;
+    right: 25px;
+    border-radius: 100%;
+}
+
+
+/*删除按钮*/
+
+.newNotification ul li .deldd {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: red;
+    right: 15px;
+    bottom: 5px;
+    background: url(../img/mine/deleicon.png) center center no-repeat;
+    background-size: 15px 15px;
+}
+
+
+/******************************通知消息详情***********/
+
+.notificationDetail div {
+    height: 100%;
+    padding: 15px 15px 5px 15px;
+    border-bottom: 1px solid #f1f1f1;
+    background: #fff;
+}
+
+.notificationDetail div h1 {
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+
+.notificationDetail div p {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+    color: #999;
+}
+
+.notificationDetail ul {
+    margin-top: 15px;
+}
+
+.notificationDetail ul li {
+    background: #fff;
+}
+
+.notificationDetail ul li p {
+    padding: 15px 15px 0 15px;
+    text-indent: 28px;
+    background: #fff;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.notificationDetail ul li img {
+    width: 90%;
+    margin-left: 5%;
+    background: #fff;
+    margin-top: 15px;
+}
+
+
+/********************常见问题********************/
+
+.commonQuestion section {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.commonQuestion section h1 {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 18px;
+}
+
+.commonQuestion section ul li {
+    margin: 10px 0;
+}
+
+.commonQuestion section ul li span {
+    color: #d8c690;
+}
+
+
+/***************空白页***************/
+
+.setcolor {
+    background: #fff;
+}
+
+.voidmessage {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding-top: 1px;
+    display: none;
+}
+
+.voidmessage img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 70px auto;
+    margin-bottom: 20px;
+}
+
+.voidmessage p {
+    text-align: center;
+    font-size: 16px;
+}
+
+
+/********************我的收藏********************/
+
+.mycollection ul li {
+    position: relative;
+}
+
+.mycollection ul li a {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 15px;
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*左侧图片*/
+
+.mycollection ul li img {
+    width: 34.6%;
+    height: 76.9%;
+    padding-right: 10px;
+}
+
+
+/*标题*/
+
+.mycollection ul li a dl {
+    position: relative;
+    width: 60%;
+}
+
+.mycollection ul li a dl dt {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+
+
+/*房字的信息*/
+
+.mycollection ul li a dl .houseinfodd {
+    margin: 2% 0;
+    color: #666666;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 15px;
+}
+
+
+/*房子的收益*/
+
+.mycollection ul li a dl .houseProfit {
+    font-size: 15px;
+    color: #9d9d9d;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mycollection ul li a dl .houseProfit .rentprof,
+.mycollection ul li a dl .houseProfit .priceprofit {
+    color: #d2bd7f;
+}
+
+.mycollection ul li a dl .houseProfit .rentprof {
+    margin-right: 5px;
+}
+
+
+/*价格*/
+
+.mycollection ul li a dl .price {
+    margin-top: 2%;
+}
+
+.mycollection ul li a dl .price span {
+    font-size: 18px;
+    color: #d2bd7f;
+    margin-right: 5px;
+}
+
+
+/*删除按钮*/
+
+.mycollection ul li .deldd {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    bottom: 13px;
+    background: url(../img/mine/deleicon.png) center center no-repeat;
+    background-size: 15px 15px;
+}
+
+
+/**************************未登录的L Club*******************************/
+
+.clubBody {
+    background: #fff;
+}
+
+.clubArtical p {
+    padding: 15px 15px 0px 15px;
+    word-spacing: 3px;
+    font-size: 15px;
+}
+
+
+/**************************登录的 L Club*******************************/
+
+.loginclubArtical .header {
+    height: 205px;
+    width: 100%;
+    background: url(../img/mine/clubHeader.png) center center no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*图片*/
+
+.loginclubArtical .header img {
+    width: 90%;
+    height: 205px;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 25px;
+}
+
+
+/*加入按钮*/
+
+.clubJoin {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    height: 45px;
+    background: #d1bd80;
+    border-radius: 2px;
+    border-bottom: 2px solid #b7a366;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+}
+
+
+/*vip 白金卡*/
+
+.loginclubArtical .header p {
+    position: absolute;
+    top: 35px;
+    left: 32px;
+    color: #987c45;
+}
+
+.loginclubArtical .header .englishType {
+    top: 54px;
+}
+
+
+/*club He 我的租赁  投资干货界面*/
+
+.rentSection {
+    margin-top: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.loginclubArtical .clubClassify,
+.rentSection .clubClassify,
+.Investment .clubClassify,
+#inTopNav .clubClassify,
+.project-cycle-detail-pull .clubClassify {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    height: 31px;
+    background: #fff;
+    padding-top: 35px;
+    justify-content: space-around;
+    font-size: 16px;
+}
+
+.rentSection .clubClassify,
+.Investment .clubClassify,
+#inTopNav .clubClassify,
+.project-cycle-detail-pull .clubClassify {
+    padding-top: 15px;
+}
+
+.loginclubArtical .clubClassify li,
+.rentSection .clubClassify li,
+.Investment .clubClassify li,
+#inTopNav .clubClassify li,
+.project-cycle-detail-pull .clubClassify li {
+    height: 100%;
+}
+
+.loginclubArtical .clubClassify li a,
+.rentSection .clubClassify li a,
+.Investment .clubClassify li a,
+#inTopNav .clubClassify li a,
+.project-cycle-detail-pull .clubClassify li a {
+    display: block;
+    height: 65%;
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 3px;
+}
+
+.loginclubArtical .clubClassify li a.curr,
+.rentSection .clubClassify li a.curr,
+.Investment .clubClassify li a.curr,
+#inTopNav .clubClassify li a.curr,
+.project-cycle-detail-pull .clubClassify li a.curr {
+    border-bottom: 2px solid #d2bd7f;
+}
+
+
+/*简介*/
+
+.loginclubArtical .info {
+    margin-top: 10px;
+    background: #fff;
+}
+
+.loginclubArtical .info h1 {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.loginclubArtical .info p {
+    padding: 14px;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+
+/*欢迎加入*/
+
+.wxInfo {
+    margin-top: 10px;
+    background: #fff;
+}
+
+.wxInfo h1 {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.wxInfo div {
+    width: 100%;
+    height: 185px;
+    background: url(../img/mine/wxbg.png) center center no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+
+/*欢迎加入的wx二维码*/
+
+.wxInfo div img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 65px;
+    top: 42px;
+}
+
+
+/*兴趣界面的兴趣介绍*/
+
+.loginclubArtical .info.interest {
+    margin-top: 0px;
+}
+
+
+/**************************我的房产*******************************/
+
+
+/*头部*/
+
+.myhouseHeader {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+}
+
+
+/*头部的标签*/
+
+.myhouseHeader #headpull {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+}
+
+.myhouseHeader #headpull span {
+    display: inline-block;
+    width: 20px;
+    height: 9px;
+    background: url(../img/mine/down.png) 63% center no-repeat;
+    background-size: 11px 6px;
+}
+
+
+/*下拉框*/
+
+.myhouseHeader .housepull {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/*下拉框的内部元素 */
+
+.myhouseHeader .housepull ul {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    background: #fff;
+    border-top: 1px solid #f1f1f1;
+}
+
+.myhouseHeader .housepull ul li {
+    border-bottom: 1px solid #f1f1f1;
+    height: 100%;
+}
+
+.myhouseHeader .housepull ul li a {
+    display: block;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+}
+
+
+/*选中的下拉框的字体的颜色*/
+
+.myhouseHeader .housepull ul li a.itemclick.curr {
+    color: #d2bd7f;
+}
+
+
+/*房间信息说明*/
+
+.desInfo {
+    padding: 15px;
+    background: #fff;
+}
+
+.desInfo p {
+    font-size: 17px;
+    color: #333;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+
+/*列表*/
+
+.processUl {
+    margin-top: 20px;
+}
+
+.processUl li {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    background: #fff;
+    height: 100%;
+    position: relative;
+    padding: 10px 0px 0px 15px;
+}
+
+
+/*线*/
+
+
+/*第一个*/
+
+.processUl li.list:before {
+    content: '';
+    display: block;
+    width: 1px;
+    background: #f1f1f1;
+    margin-left: 17px;
+    margin-top: 20px;
+}
+
+
+/*第2,3,4,5 个左侧的线*/
+
+.processUl li.secondli:before,
+.processUl li.thirdli:before,
+.processUl li.fourli:before,
+.processUl li.fiveli:before,
+.processUl li.sixli:before,
+.processUl li.sevenli:before,
+.processUl li.eightli:before,
+.processUl li.nineli:before,
+.processUl li.tenli:before,
+.processUl li.elevenli:before,
+.processUl li.twli:before {
+    margin-top: -10px;
+}
+
+.processUl li.twli:before {
+    margin-bottom: 54px;
+}
+
+
+/*内容*/
+
+.processUl li dl {
+    margin-left: 25px;
+    width: 100%;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*定金支付 每个阶段的大标题*/
+
+.processUl li dl dt {
+    font-size: 17px;
+    color: #333;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+
+/*原点*/
+
+.processUl li .step {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    position: absolute;
+    top: 16px;
+    left: 19px;
+}
+
+
+/*全部*/
+
+.processUl li .step.all {
+    background: url(../img/mine/allGreen.png) center center no-repeat;
+    background-size: 20px 20px;
+}
+
+
+/*半个*/
+
+.processUl li .step.half {
+    background: url(../img/mine/banCycle.png) center center no-repeat;
+    background-size: 20px 20px;
+}
+
+
+/*未完成*/
+
+.processUl li .step.unfinish {
+    background: url(../img/mine/noneCycle.png) center center no-repeat;
+    background-size: 20px 20px;
+}
+
+
+/*状态和价格*/
+
+.processUl li dl .money {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    font-size: 20px;
+    color: #fe6634;
+}
+
+
+/*已提交的状态*/
+
+.processUl li dl .money.finishStatus {
+    font-size: 16px;
+    color: #d2bd7f;
+}
+
+
+/*未提交状态*/
+
+.processUl li dl .money.unfinishStatus {
+    font-size: 16px;
+    color: #999999;
+}
+
+
+/*第三个阶段*/
+
+.processUl li dl .title1 {
+    padding-bottom: 8px;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/*每个标题下的进行状态*/
+
+.processUl li dl .titleStatus {
+    padding-bottom: 15px;
+    color: #999;
+    font-size: 15px;
+}
+
+
+/*未完成的状态*/
+
+.processUl li dl .titleStatus.unfinish {
+    color: #fe6634;
+}
+
+.processUl li dl .titleStatus.unfinish .warning {
+    display: block;
+}
+
+
+/*第五个阶段的 推荐银行*/
+
+.processUl li.fiveli dl .bankUl li,
+.processUl li.nineli dl .bankUl li {
+    height: 30px;
+    background: #f1f1f1;
+    margin-right: 15px;
+    border-radius: 2px;
+    margin-bottom: 1px;
+}
+
+.processUl li.fiveli dl .bankUl li div,
+.processUl li.nineli dl .bankUl li div {
+    width: 104%;
+    height: 100%;
+    display: block;
+    background: #f1f1f1;
+    margin-top: -10px;
+    height: 40px;
+    margin-left: -13px;
+}
+
+.processUl li.fiveli dl .bankUl li div span,
+.processUl li.nineli dl .bankUl li div span {
+    display: inline-block;
+    height: 100%;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+.processUl li.fiveli dl .bankUl li div input[type="tel"],
+.processUl li.nineli dl .bankUl li div input[type="tel"] {
+    background: url(../img/mine/bankTel.png) center center no-repeat;
+    border: 0;
+    width: 45px;
+    height: 30px;
+    background-size: 20px 20px;
+    float: right;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+
+/*购买成本*/
+
+.payAllMoney {
+    background: #fff;
+    margin-top: 20px;
+}
+
+.payAllMoney h1 {
+    font-size: 17px;
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+    color: #333;
+    font-weight: bold;
+}
+
+.payAllMoney ul {
+    padding: 15px;
+}
+
+.payAllMoney ul li {
+    height: 30px;
+    color: #999;
+    font-size: 16px;
+}
+
+.payAllMoney ul li .last {
+    float: right;
+    margin-right: 40px;
+}
+
+.payAllMoney .warn {
+    background: #fbfaf5;
+    padding: 10px;
+}
+
+
+/********************我的租赁**************************/
+
+
+/*头部下拉框和我的房屋一样，中间的和club一样*/
+
+
+/*合同内容*/
+
+.rentContentInfo {
+    padding: 15px;
+    background: #fff;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+
+/********************最新动态**************************/
+
+
+/*这个界面和首页是一样的*/
+
+
+/*banner*/
+
+#inbar .swiper-slide.newsStatus {
+    position: relative;
+}
+
+#inbar .swiper-slide.newsStatus p {
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+    padding: 15px;
+}
+
+.inMain2 dd .inMain2Tip .lastSpan {
+    /*margin-left: 15px;*/
+}
+
+.inWrap1.advert {
+    margin-bottom: 0px;
+}
+
+
+/********************精彩活动界面**************************/
+
+.activeListA .activeListUl .linkA {
+    display: block;
+}
+
+
+/*活动信息div*/
+
+.activeListA .activeListUl .inner {
+    background: #fff;
+    padding: 15px;
+}
+
+
+/*标题*/
+
+.activeListUl .inner .activeTitle {
+    font-size: 18px;
+    color: #000;
+}
+
+
+/*新闻列表*/
+
+.activeListUl .inner .activeInfo {
+    margin-top: 12px;
+}
+
+
+/*在英伦故事列表  新闻时间和标题间距的修改*/
+
+.activeListUl .inner .activeInfo.story {
+    margin-top: 0px;
+}
+
+
+/*抢位中*/
+
+.activeListUl .inner .activeInfo .status {
+    display: inline-block;
+    width: 65px;
+    border: 1px solid #d2bd7f;
+    height: 30px;
+    border-radius: 74px;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+    color: #d2bd7f
+}
+
+
+/*活动已结束*/
+
+.activeListUl .inner .activeInfo .status.finish {
+    border: 1px solid #999999;
+    color: #999999;
+}
+
+
+/*时间*/
+
+.activeListUl .inner .activeInfo .time {
+    margin-right: 10px;
+    color: #999999;
+}
+
+
+/*地址*/
+
+.activeListUl .inner .activeInfo .address {
+    color: #999999;
+}
+
+
+/******************活动列表********************/
+
+.activeDetail .headerDetail .inner {
+    background: #fff;
+    padding: 15px;
+}
+
+.activeDetail .headerDetail .inner .detailTitle {
+    font-size: 18px;
+    color: #000;
+}
+
+.activeDetail .headerDetail .inner .detailInfo {
+    margin-top: 10px;
+}
+
+
+/*时间icon*/
+
+.detailInfo .time {
+    display: inline-block;
+    background: url(../img/mine/iconTime.png) 0% 24% no-repeat;
+    background-size: 15px 15px;
+    text-align: left;
+    margin-right: 15px;
+    padding-left: 20px;
+    line-height: 17px;
+}
+
+.detailInfo .address {
+    display: inline-block;
+    background: url(../img/mine/iconAddress.png) 0% center no-repeat;
+    background-size: 14px 17px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+/**********************活动详情***********************/
+
+
+/*详情*/
+
+.detail {
+    padding: 15px;
+    font-size: 15px;
+    line-height: 25px;
+    background: #fff;
+    margin-top: 15px;
+}
+
+
+/*详情的标题*/
+
+.detail dl dt {
+    font-size: 17px;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #000;
+}
+
+.detail dl dd {
+    font-size: 16px;
+    color: #333;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.detail dl dd p {
+    margin-bottom: 15px;
+}
+
+
+/*****************投资干货******************/
+
+.Investment {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.typeInvest {
+    display: inline-block;
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+/********************投资详情***************************/
+
+.detailInfo {
+    height: 30px;
+}
+
+
+/*类型*/
+
+.detailInfo .time.InvestType {
+    display: inline-block;
+    background: url(../img/mine/houseIcon.png) 0% 24% no-repeat;
+    background-size: 15px 15px;
+    text-align: left;
+    margin-right: 15px;
+    padding-left: 20px;
+}
+
+
+/*时间*/
+
+.detailInfo .address {
+    display: inline-block;
+    float: right;
+    background: url();
+}
+
+
+/*集团*/
+
+.inner .InvestName {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #999;
+}
+
+/*玩在英国详情 和 投资的详情界面一样  修改最后一个，改为价格*/
+.inner .InvestName.playPrice{
+    color: #fe6634;
+}
+
+
+
+/****************新闻详情，英伦故事 详情  ******************************/
+
+.address.newStorydetail {
+    width: 100%;
+    padding: 5px 0;
+}
+
+
+/**************** 项目详情（全英置业）  ******************************/
+
+
+/*房子信息 banner下面的介绍*/
+
+#project-houseInfo {
+    background: #fff;
+    padding: 15px;
+}
+
+#inbar .swiper-pagination.fixstyle {
+    color: #fff;
+    text-align: right;
+    width: 96%;
+    font-size: 20px;
+    height: 30px;
+}
+
+
+/*公寓的名称*/
+
+#project-houseInfo h1 {
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/*公寓的具体地址*/
+
+#project-houseInfo .address {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+/*地址的图标*/
+
+#project-houseInfo .address img {
+    width: 11px;
+    height: 14px;
+    padding-right: 5px;
+    padding-top: 2px;
+}
+
+
+/*价格首付等信息*/
+
+#project-houseInfo .housePrice {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#project-houseInfo .housePrice li {
+    width: 25%;
+    position: relative;
+}
+
+
+/*价格百分比*/
+
+#project-houseInfo .housePrice li .first {
+    font-size: 1.5em;
+    text-align: center;
+    color: #ff6633;
+}
+
+#project-houseInfo .housePrice li .second {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#project-houseInfo .housePrice li i {
+    width: 1px;
+    height: 30px;
+    background: #dbdcdf;
+    position: absolute;
+    right: 0;
+    top: 20%;
+}
+
+
+/*房子的特点 养老房*/
+
+.house-feature ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 15px 5px 15px;
+}
+
+.house-feature ul li {
+    width: 25%;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.house-feature ul li img {
+    width: 17px;
+    height: 17px;
+    padding-right: 5px;
+}
+
+
+/*项目信息*/
+
+.projectDetail .projectItem {
+    display: block;
+    height: 50px;
+    margin-bottom: 1px;
+    line-height: 50px;
+    padding-left: 15px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    background: #fff url(../img/ico01.png) 95% center no-repeat;
+    background-size: 9px 15px;
+}
+
+
+/*项目周边*/
+
+.projectDetail .developInfo .project-cycle-ul {
+    padding: 0px 15px;
+}
+
+.projectDetail .developInfo .project-cycle-ul li {
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f1f1f1;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 0 35px 0 15px;
+    line-height: 40px;
+}
+
+
+/*项目信息周边底部分割线*/
+
+.project-cycle-detail-pull {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.project-cycle-pullshow-one,
+.project-cycle-pullshow-two,
+.project-cycle-pullshow-three {
+    margin-bottom: 15px;
+    background: #fff;
+}
+
+.project-cycle-pullshow-one ul li,
+.project-cycle-pullshow-two ul li,
+.project-cycle-pullshow-three ul li {
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px 15px 10px 15px;
+}
+
+.project-cycle-pullshow-two,
+.project-cycle-pullshow-three {
+    display: none;
+}
+
+
+/*主要户型没有背景图的*/
+
+.projectDetail .projectItem.hxInfo {
+    background: #fff url();
+}
+
+
+/*周边的具体顶部间距*/
+
+.projectDetail.cycle {
+    margin-top: 15px;
+}
+
+.projectDetail p {
+    padding: 15px;
+    font-size: 15px;
+    line-height: 32px;
+    background: #fff;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
+
+
+/*项目详情，项目亮点底部的分割线*/
+
+.intopnavShow {
+    margin-bottom: 0px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*开发商信息*/
+
+.developInfo {
+    background: #fff;
+    margin-top: 1px;
+}
+
+.developInfo ul {
+    padding: 15px 15px 0 15px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/*整行*/
+
+.developInfo ul li .title1 {
+    padding-right: 10px;
+    color: #888888;
+}
+
+.developInfo ul li.all-li {
+    width: 100%;
+    font-size: 15px;
+    padding-right: 10px;
+    padding: 0 0 15px 0;
+}
+
+
+/*每行两个*/
+
+.developInfo ul li.two-li {
+    width: 50%;
+    font-size: 15px;
+    padding: 0 0 15px 0;
+}
+
+
+/*户型房子的状态，在售已售*/
+
+#inStory .swiper-slide .housePayStatus {
+    display: block;
+    width: 99%;
+    text-align: center;
+    border-top: 1px solid #f1f1f1;
+    border-left: 1px solid #f1f1f1;
+    border-right: 1px solid #f1f1f1;
+    padding-top: 15px;
+}
+
+#inStory .swiper-slide .status {
+    color: #d2bd7f;
+}
+
+
+/*户型图片*/
+
+#inStory .swiper-slide.projectScroll img {
+    width: 249px;
+    height: 156px;
+    border-right: 1px solid #f1f1f1;
+}
+
+
+/*房子的面积，价格*/
+
+#inStory .swiper-slide p.houseInfo {
+    height: 30px;
+    text-align: center;
+}
+
+#inStory .swiper-slide p.houseInfo span {
+    display: inline-block;
+    width: 32%;
+    padding-right: 1%;
+    position: relative;
+    text-align: center;
+}
+
+
+/*户型，面积之间的分割线*/
+
+#inStory .swiper-slide p.houseInfo span i {
+    width: 1px;
+    height: 14px;
+    background: #dbdcdf;
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+}
+
+
+/*项目亮点*/
+
+.project-lumpoint {
+    background: #fff;
+    padding: 15px;
+}
+
+.project-lumpoint ul li p {
+    line-height: 25px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.project-lumpoint ul li img,
+.all-money-show ul.showStept li img {
+    padding-bottom: 10px;
+}
+
+
+/*底部*/
+
+.project-bottom-fix {
+    height: 50px;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+}
+
+.project-bottom-fix ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.project-bottom-fix ul li {
+    width: 33.33%;
+    height: 50px;
+}
+
+
+/*收藏*/
+
+.project-bottom-fix ul li.project-collect {
+    background: url(../img/collectIcon.png) center 20% no-repeat;
+    background-size: 22px 20px;
+}
+
+.project-bottom-fix ul li.project-collect p {
+    text-align: center;
+    line-height: 75px;
+}
+
+
+/*免费拨打*/
+
+.project-bottom-fix ul li.project-tel {
+    background: #c8b47a;
+}
+
+.project-bottom-fix ul li.project-tel a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    line-height: 50px;
+}
+
+
+/*预约咨询*/
+
+.project-bottom-fix ul li.project-translate a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/*预约咨询*/
+
+.project-bottom-fix ul li.project-translate {
+    background: #d2bd7f;
+}
+
+
+/*购房须知*/
+
+.purcher-house {}
+
+
+/*全款流程,贷款流程*/
+
+.flow-chart {
+    height: 45px;
+    background: #fff;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 15px 15px 0;
+}
+
+.flow-chart div {
+    width: 50%;
+    text-align: center;
+    line-height: 45px;
+    background: #f4f5f5;
+    margin-left: 1px;
+}
+
+
+/*全款流程 选中*/
+
+.flow-chart .all-money.select,
+.flow-chart .stages-money.select {
+    background: #fff;
+}
+
+
+/*贷款的流程标题*/
+
+.flow-chart .all-money.select .title1,
+.flow-chart .stages-money.select .title1 {
+    display: block;
+    height: 45px;
+    background: url(../img/mine/down1.png) center 94% no-repeat;
+    background-size: 10px 6px;
+}
+
+
+/*全款流程 贷款流程的图片*/
+
+
+
+.all-money-show ul.showStept,
+.stages-money-show ul.showStept {
+    background: #fff;
+    padding: 15px;
+}
+
+.all-money-show ul.showStept li p,
+.stages-money-show ul.showStept li p {
+    line-height: 25px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+
+/*全款，贷款的两个按钮*/
+
+.purcher-house {
+    display: none;
+}
+
+
+/*全款下的详情*/
+
+.all-money-show {
+    display: none;
+}
+
+
+/*贷款流程详情*/
+
+.stages-money-show {
+    display: none;
+}
+
+.all-Invest {
+    margin-top: 10px;
+}
+
+.all-Invest .asideJs {
+    /*margin-left: -15px;*/
+    /*margin-right: -15px;*/
+    padding: 15px;
+    background: #fff;
+}
+
+.all-Invest .asideJs ul {
+    padding: 0;
+}
+
+
+/*投资标题*/
+
+.all-Invest .asideJs h1 {
+    height: 35px;
+    background: #fff;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*为什么选择蓝鲨*/
+
+.choos-ls {
+    background: #fff;
+    margin-top: -50px;
+}
+
+.choos-ls dl dt {
+    font-size: 18px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.choos-ls dl dd {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding-bottom: 30px;
+    background: #fff;
+}
+.choos-ls dl dd p{
+    width: 50%;
+}
+
+.choos-ls dl dd img {
+    width: 87px;
+    height: 87px;
+    margin-left: 14%;
+    padding-right: 10px;
+}
+
+
+/*选择蓝鲨的标题*/
+
+.choos-ls dl dd p .choos-title {
+    font-size: 17px;
+    color: #333;
+    display: inline-block;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+
+/*投资说明*/
+
+.invest-detail {
+    display: none;
+}
+
+.invest-detail h1 {
+    font-size: 16px;
+    background: #fff;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*租金和年化率*/
+
+.invest-detail .rentLv {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.invest-detail .rentLv p {
+    padding: 15px;
+    background: #fff;
+}
+
+
+/*图片*/
+
+.invest-detail .rentLv p img {
+    width: 24px;
+    height: 24px;
+    padding-right: 10px;
+}
+
+
+/*租金*/
+
+.invest-detail .rentLv p .first-title {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 26px;
+    color: #333;
+    padding-right: 25px;
+    width: 80px;
+}
+
+
+/*年化率*/
+
+.invest-detail .rentLv p .second-title {
+    font-size: 15px;
+    padding-right: 5px
+}
+
+.invest-detail .rentLv p .third-title {
+    font-size: 20px;
+    color: #ff6633;
+}
+
+
+/*最后一个p*/
+
+.invest-detail .rentLv p.lastP {
+    padding-top: 0px;
+}
+
+
+/*房间信息*/
+
+.invest-detail .homeInfo {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 17px;
+    color: #d2bd7f;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/*选择全款，贷款*/
+
+.select-payType {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 15px 0 15px;
+    background: #fff;
+}
+
+.select-payType div {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.select-payType div.payType-all,
+.select-payType div.payType-dai {
+    height: 67px;
+    position: relative;
+    background: #fff;
+}
+
+.select-payType div.payType-all.select,
+.select-payType div.payType-dai.select {
+    background: #d2bd7f;
+}
+
+.select-payType div.payType-all span.one,
+.select-payType div.payType-dai span.one {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    line-height: 67px;
+    font-size: 18px;
+    color: #333;
+}
+
+.select-payType div.payType-all.select span.one,
+.select-payType div.payType-dai.select span.one {
+    color: #fff;
+}
+
+.select-payType div.payType-all span.two,
+.select-payType div.payType-dai span.two {
+    display: inline-block;
+    position: absolute;
+    top: 66px;
+    left: 45%;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.select-payType div.payType-all.select span.two,
+.select-payType div.payType-dai.select span.two {
+    border-top: 10px solid #d2bd7f;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+
+/*全款，贷款*/
+
+.select-payType .allpay-show,
+.select-payType .yearOne-show {
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.select-payType .allpay-show.current,
+.select-payType .yearOne-show.current {
+    color: #d2bd7f;
+}
+
+.select-payType .allpay-show .big,
+.select-payType .yearOne-show .big {
+    padding-top: 10px;
+}
+
+.select-payType .allpay-show .big .bigshow,
+.select-payType .yearOne-show .big .bigshow {
+    font-size: 26px;
+}
+
+
+/*价格*/
+
+.priceShow {
+    background: #fff;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+
+/*************************项目简介*************************/
+
+.projectTitle {
+    padding: 0 15px;
+}
+
+
+/*项目标题*/
+
+.projectTitle .first-title {
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #f1f1f1;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
+    background: #fff;
+}
+
+
+/*项目简介*/
+
+.projectTitle .sectond-title {
+    border-bottom: 1px solid #f1f1f1;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
+    font-size: 18px;
+    color: #999999;
+    background: #fff;
+}
+
+
+/*项目详情信息*/
+
+.projectTitle .second-detail {
+    padding: 15px;
+    line-height: 30px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    background: #fff;
+}
+
+.projectTitle .project-info li {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 15px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.projectTitle .project-info li .first {
+    margin-right: 20px;
+    color: #999;
+}
+
+.projectTitle .project-info li .first.last {
+    width: 68px;
+    margin-right: 10px;
+}
+
+.projectTitle .project-info li .other {
+    width: 77%;
+}
+
+.projectTitle .project-info {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 0 15px;
+    background: #fff;
+}
+
+
+/*************************周边配套*************************/
+
+.cycle-brief {
+    background: #fff;
+}
+
+.cycleTitle .first-title {
+    font-size: 17px;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 15px;
+}
+
+.cycle-info li.cycleLi {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 15px;
+}
+
+.cycle-info li.cycleLi .first {
+    margin-right: 10px;
+    display: inline-block;
+    width: 60px;
+}
+
+.detailUL {
+    width: 78%;
+}
+
+.detailUL dd {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+
+/*预约咨询*/
+
+.appoint,
+.appointMent {
+    height: 100%;
+}
+
+.appointMent {
+    background: #fff;
+}
+
+.appointMent p {
+    padding: 15px;
+    background: #fbfaf5;
+}
+
+.appointMent ul {
+    background: #fff;
+    padding-bottom: 10px;
+}
+
+.appointMent ul li {
+    height: 40px;
+    line-height: 40px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.appointMent ul li label {
+    width: 65px;
+}
+
+.appointMent ul li input,
+.appointMent ul li textarea {
+    width: 70%;
+    margin-right: 12px;
+    border: 0;
+    background: #f4f5f5;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.appointMent ul li input.appointdate {
+    background: #f4f5f5 url(../img/mine/choosedate.png) 100% center no-repeat;
+    background-size: 44px 44px;
+}
+
+.appointMent ul li.appointInfoLi {
+    height: 120px;
+}
+
+.appointMent ul li.appointInfoLi textarea {
+    height: 90px;
+    resize: none;
+}
+
+.appointMent ul li.submitLi {
+    padding-bottom: 10px;
+}
+
+
+/*预约按钮*/
+
+.appointMent ul li.submitLi .submitBtn {
+    width: 76%;
+    height: 45px;
+    background: #d2bd7f;
+    font-size: 18px;
+    color: #fff;
+    border-bottom: 2px solid #bfa65b;
+    border: 0;
+}
+
+
+/*玩在英国-旅游定制*/
+.appointMent.travel ul li input[type="text"]{
+    background:#f4f5f5 url(../img/mine/pencil.png) 95% center no-repeat;
+    background-size: 13px 13px;
+}
+
+.appointMent.travel ul li.appointInfoLi textarea{
+   background:#f4f5f5 url(../img/mine/pencil.png) 95% 10% no-repeat;
+    background-size: 13px 13px; 
+}
+
+
+/*补充个人信息*/
+
+.inputFile form {
+    padding: 45px 15px;
+    background: #fff;
+}
+
+.inputFile form input[type="text"] {
+    height: 40px;
+    width: 100%;
+    border: 0;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.inputFile form input[type="button"] {
+    margin-top: 30px;
+    height: 45px;
+    width: 100%;
+    border: 0;
+    background-color: #d2bd7f;
+    border-bottom: 2px solid #b7a265;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 2px;
+}
