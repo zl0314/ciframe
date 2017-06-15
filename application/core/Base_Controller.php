@@ -217,6 +217,9 @@ class Base_Controller extends Common_Controller {
 				if(!empty($r['append_rule'])){
 					$rule .= '|'.$r['rule'];
 				}
+				if(empty($r['is_require'])){
+                    $rule = 'trim';
+                }
 				if(!empty($r['field'])){
 					$this->form_validation->set_rules('data['.$name.']', $r['field'], $rule);
 				}

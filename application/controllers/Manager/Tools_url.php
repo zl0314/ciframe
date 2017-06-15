@@ -38,16 +38,16 @@ class Tools_url extends Base_Controller {
             'title' => array(
                 'field' => '标题',
                 'rule' => 'trim',
-                'is_require' => 'false',
+                'is_require' => true,
                 'type' => 'text',
                 'show_in_search' => true,
+                'show_in_table' => true,
                 'search_type' => 'like'
             ),
             'atime' => array(
                 'field' => '时间',
                 'type' => 'time',
-                'is_primary' => false,
-                'show_in_search' => false,
+                'show_in_table' => true,
                 'search_type' => 'like',
                 'readonly' => true,
 			    'format' => 'yyyy-mm-dd HH:mm:ss'
@@ -55,7 +55,6 @@ class Tools_url extends Base_Controller {
             'is_index' => array(
                 'field' => '推荐首页',
                 'type' => 'radio',
-                'is_primary' => false,
                 'show_in_search' => true,
                 'default' => 0,
                 'data' => $this->is_index
@@ -63,21 +62,20 @@ class Tools_url extends Base_Controller {
             'hook' => array(
                 'field' => '分类',
                 'type' => 'select',
-                'is_primary' => false,
                 'show_in_search' => true,
+                'show_in_table' => true,
+                'is_require' => true,
                 'data' => $this->hook
             ),
             'content' => array(
                 'field' => '详情',
-                'is_primary' => false,
-//                'show_in_table' => false,
+                'show_in_table' => true,
                 'type' => 'textarea',
                 'editor' => false,
             ),
             'img' => array(
                 'type' => 'image',
                 'field' => '缩略图',
-                'is_primary' => false,
                 'readonly' => true,
                 'width' => '300', //指定宽和高后， 上专的图片会自动按比例进行裁剪
                 'height' => '200',
@@ -86,8 +84,7 @@ class Tools_url extends Base_Controller {
             'interesting' => array(
                 'field' => '兴趣',
                 'type' => 'checkbox',
-                'is_require' => 'false',
-//                'show_in_table' => true,
+                'is_require' => true,
                 'data' => array('1' => '打球', '2' => '读书', '3' => '音乐', '4' => '跑步')
             ),
         );
@@ -99,7 +96,7 @@ class Tools_url extends Base_Controller {
     public function index(){
 
         $data = get_page('tools_url');
-        $list_html = get_list_html($this->form_data, $data);
+        $list_html = get_list_html($this->form_data, $data, false, '<a href="'.site_url($this->siteclass . '/' . $this->sitemethod . '/pass/{id}').'">审核</a>');
         $vars = array(
             'list_html' => $list_html,
         );

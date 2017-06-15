@@ -8,7 +8,7 @@ function get_page($tb, $where = array(), $field = '*', $order = '',  $page_query
         if(empty($r['show_in_search'])){
             continue;
         }
-        if(_get($k)){
+        if(isset($_GET[$k]) && $_GET[$k] !== ''){
             if(isset($r['search_type'])){
                 $where['like'] = array($k => _get($k));
             }else{
@@ -79,7 +79,7 @@ function get_page($tb, $where = array(), $field = '*', $order = '',  $page_query
 }
 
 //得到列表页面HTML
-function get_list_html($table_data, $data, $has_list_order = false){
+function get_list_html($table_data, $data, $has_list_order = false, $more_operater = ''){
 
     $CI =& get_instance();
     //路由
@@ -99,7 +99,7 @@ function get_list_html($table_data, $data, $has_list_order = false){
 
     //列表标题
     foreach($table_data as $k => $r){
-        if(isset($r['show_in_table'])){
+        if(empty($r['show_in_table'])){
             continue;
         }
         $html .= '<th ><div class="th-gap" >'.$r['field'].'</div></th>';
@@ -119,22 +119,43 @@ function get_list_html($table_data, $data, $has_list_order = false){
         foreach($data['list'] as $k => $r){
             $html .= '<tr id="item_'.$r['id'].'">';
             foreach($table_data as $tk => $tr){
-                if(isset($r['show_in_table'])){
+                $value = !empty($r[$tk]) ? $r[$tk] : '';
+                if(empty($tr['show_in_table']) && empty($tr['is_primary'])){
                     continue;
                 }
+                //多选按钮
                 if(!empty($tr['is_primary'])){
                     $primary = $tk;
                     $html .= '<td><input type="checkbox" name="ids[]" value="'.$r[$tk].'" ></td>';
-                }
-                if(!empty($tr['data'])){
-                    $html .=  '<td>'.$tr['data'][$r[$tk]].'</td>';
                     continue;
                 }
-                $html .=  '<td>'.$r[$tk].'</td>';
+
+                if(!empty($tr['data'])){
+                    $html .=  '<td>'.$tr['data'][$r[$tk]].'</td>';continue;
+                }
+                //时间转换
+                if($tr['type'] == 'time'){
+                    if(!empty($r[$tk]) && is_numeric($r[$tk])){
+                        $html .=  '<td>'.strtotime($tr['format'], $value).'</td>';
+                    }else{
+                        $html .=  '<td>'.$value.'</td>';
+                    }
+                    continue;
+                }
+
+                $html .=  '<td>'.$value.'</td>';
             }
+            //其它的操作项
+            $more_operater = str_replace(
+                ['{id}'],
+                [$r[$primary]],
+                $more_operater
+            );
+
             $html .= '<td>
-                        <a  title="编辑" href="'.get_url('Manager/'.$siteclass . '/edit/' . $r[$primary]).'">编辑</a> |
-                        <a  onclick="delitem(\''.$r[$primary].'\',this)"  title="删除" href="javascript:;">删除</a>
+                        <a  title="编辑" href="'.get_url(MANAGER_PATH . '/'.$siteclass . '/edit/' . $r[$primary]).'">编辑</a> |
+                        <a  onclick="delitem(\''.$r[$primary].'\',this)"  title="删除" href="javascript:;">删除</a><br>
+                        '.$more_operater.'
                         </td>';
             $html .= '</tr>';
         }
@@ -162,12 +183,12 @@ function get_search_item($table_data){
                 $html .= $r['field'] . '&nbsp;&nbsp;<select name="'.$k.'" id="'.$k.'" onchange="$(\'#searchForm\').submit()"><option value="">请选择</option>';
                     foreach($r['data'] as $dk => $dr){
                         $selected = '';
-                        if($dk == _get($k)){
+                        if(isset($_GET[$k]) && $_GET[$k] !== '' && $dk == $_GET[$k]){
                             $selected = 'selected';
                         }
                         $html .= '<option value="'.$dk.'" '.$selected.'>'.$dr.'</option>';
                     }
-                $html .= '</select>';
+                $html .= '</select>&nbsp;&nbsp;';
             }
         }
     $html .= '&nbsp;&nbsp;<input type="submit" value="搜 索" class="batch delect_batch input-button" /></form>';
@@ -333,7 +354,7 @@ function _post($key = '', $act = '_POST'){
         if(!empty($method[$key])){
             return newhtmlspecialchars($method[$key]);
         }else{
-            return null;
+            return false;
         }
     }else{
         return newhtmlspecialchars($method);
@@ -1024,8 +1045,8 @@ function url_to($siteclass = '', $sitemethod = 'index', $param = array()){
     //  当前方法
     $sitemethod = $sitemethod ? $sitemethod : $RTR->fetch_method();
     $url = $siteclass . '/'. $sitemethod;
-    if(strpos(strtolower($_SERVER['REQUEST_URI']), 'manager') !== false){
-        $url = 'Manager/' . $url;
+    if(strpos(strtolower($_SERVER['REQUEST_URI']), strtolower(MANAGER_PATH)) !== false){
+        $url = MANAGER_PATH . '/' . $url;
     }
 
     $uri = get_url($url, $param);
