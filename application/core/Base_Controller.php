@@ -75,13 +75,6 @@ class Base_Controller extends Common_Controller {
 		return $privileges;
 	}
 
-	//得到当前管理员的可管理项目ids
-	public function getAdminProjectids($user_id = 0){
-		$user_id = $user_id ? $user_id : $this->admin_id;
-		$privileges = $this->Result_model->getOneBySql("SELECT projectids FROM ".tname('admin_user')." WHERE user_id='{$user_id}'");
-		$privileges = empty($privileges) ? '' : json_decode($privileges,true);
-		return $privileges;
-	}
 
 	//得到adminmenu.php中所有权限
 	public function get_all_privileges($privileges = array()){
@@ -255,7 +248,7 @@ class Base_Controller extends Common_Controller {
 		$where = array(
 			$this->primary => $id
 		);
-		$row = $this->Result_model->getRow($this->tb, '*', $where);
+		$row = $this->Result_model->getRow($this->tb, $field, $where);
 		if(empty($row)){
 			$this->message('内容不存在');
 		}
