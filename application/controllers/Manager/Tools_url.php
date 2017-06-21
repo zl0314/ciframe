@@ -52,6 +52,12 @@ class Tools_url extends Base_Controller {
                 'readonly' => true,
 			    'format' => 'yyyy-mm-dd HH:mm:ss'
             ),
+            'pics' => array(
+                'field' => '轮播图',
+                'type' => 'morepic',
+                'width' => '500',
+                'height' => '300'
+            ),
             'is_index' => array(
                 'field' => '推荐首页',
                 'type' => 'radio',

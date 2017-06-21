@@ -197,10 +197,12 @@ class Base_Controller extends Common_Controller {
         $row = !empty($post) ? $post : $row;
 		$data = $this->form_data;
 		$tb = $this->tb;
+		$primary = 'id';
         if(!empty($post)){
 			//验证规则
 			foreach($data as $name => $r){
 				if(!empty($r['is_primary'])){
+				    $primary = $name;
 					continue;
 				}
 				$rule = 'trim|required';
@@ -228,7 +230,7 @@ class Base_Controller extends Common_Controller {
 				if(!empty($this->has_addtime)){
 					$save_data['addtime'] = date('Y-m-d H:i:s');
 				}
-				$res = $this->Result_model->save($tb, $save_data);
+				$res = $this->Result_model->save($tb, $save_data, $primary);
 				if($res){
 					url_to();
 				}

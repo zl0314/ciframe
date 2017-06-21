@@ -4,6 +4,8 @@
  * createTime   : 2017/6/02 14:11
  * Description  : 自动创建控制器 |模型
  *
+ * @usage
+ * php create.php controller(自动创建控制器) Power(文件名) 以下参数可选 [ power(表名) id(主键) Manager(创建Manager目录下的控制器) ]
  */
 
 //模板文件
@@ -20,10 +22,11 @@ if(!empty($argv['1'])){
     //路径 位于 application文件夹下的路基与
     $path = !empty( $argv[5] ) ? $argv[5] : '';
     $source_path = $path;
-    $path = !empty($path) ? $path . '_' : '';
+    $path = !empty($path) ? $path . '_' : 'Manager_';
 
     //模板文件
     $templage_file = 'create_template/' . $path . $argv[1];
+
     if($argv['1'] != 'help'){
         //获取模板文件
         if(!file_exists($templage_file) ){
@@ -50,10 +53,10 @@ if(!empty($argv['1'])){
             exit('filename can not be empty');
         }
         if(empty($table)){
-            exit('table can not be empty');
+            $table = strtolower($filename);
         }
         if(empty($primary)){
-            exit('primary can not be empty');
+            $primary = 'id';
         }
 
         $source_path = empty($source_path) ? '' : $source_path . '/';
@@ -69,8 +72,7 @@ if(!empty($argv['1'])){
         $conn = mysqli_connect("localhost","root","zlflrhl");
         mysqli_select_db($conn, DB);
         mysqli_query($conn, "SET NAMES UTF8");
-
-        $query = mysqli_query($conn, 'show FIELDS from ' . TB);
+        $query = mysqli_query($conn, 'show FIELDS from ' . TB) or die(mysqli_error($conn));
 
         while($fields = mysqli_fetch_assoc($query)){
             $data[$fields['Field']] = array(
