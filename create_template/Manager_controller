@@ -32,7 +32,7 @@ class {class} extends Base_Controller {
     }
 
     public function index(){
-        $data = get_page('{table}');
+        $data = get_page($this->tb);
         $list_html = get_list_html($this->form_data, $data);
         $vars = array(
             'list_html' => $list_html,

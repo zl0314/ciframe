@@ -164,6 +164,7 @@ if(!function_exists('createFormHtml')){
                             <div class="form-cont">
                                 <span class="help-inline"><button class="btn select_img" id="'.$k.'"  type="button">&nbsp;</button></span><span class="help-inline" style="margin-left:35px;">推荐大小为宽'.$width.'，高'.$height.'</span>
                             </div>
+                            '.$form_error.'
                             <ul class="ipost-list ui-sortable" id="'.$k.'_fileList"  style="width:1000px;height:100%;margin-left:90px;margin-top:15px;clear:both;">
                                 ';
                         if (!empty($value)){
@@ -382,7 +383,7 @@ if(!function_exists('createFormHtml')){
                                     $c = 'checked';
                                 }
                                 $formHtml .= '<label for="type'.$radio_k.'">
-                                            <input id="type'.$radio_k.'" type="radio" name="data['.$name.']"  value="'.$k.'" '.$c.'/> '.$radio_r.'
+                                            <input id="type'.$radio_k.'" type="radio" name="data['.$name.']"  value="'.$radio_k.'" '.$c.'/> '.$radio_r.'
                                         </label>';
                             }
                         }

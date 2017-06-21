@@ -11,6 +11,7 @@ class Adminuser extends Base_Controller {
 	    parent::__construct();
 	    $this->checkAdminLogin();
 		$this->tb = 'admin_user';
+		$this->primary = 'id';
 	}
 	
 	/**
@@ -20,9 +21,8 @@ class Adminuser extends Base_Controller {
 	public function index()
 	{
 		$where = array( );
-
-			$data = get_page($this->tb, $where, $this->Result_model,10,'user_id desc','*','', 'user_id');
-			$this->tpl->assign($data);
+        $data = get_page($this->tb);
+        $this->tpl->assign($data);
 		
 		$this->tpl->display();
 	}
@@ -180,8 +180,7 @@ class Adminuser extends Base_Controller {
 	 * [删除]
 	 * @date 2015-5-11
 	 **/
-	function del( $id = '')
-	{
+	function del( $id = '') {
 		$id = intval( $id );
 		$where = array(
 			'user_id' => $id

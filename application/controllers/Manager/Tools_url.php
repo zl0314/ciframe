@@ -101,7 +101,7 @@ class Tools_url extends Base_Controller {
 
     public function index(){
 
-        $data = get_page('tools_url');
+        $data = get_page($this->tb);
         $list_html = get_list_html($this->form_data, $data, false, '<a href="'.site_url($this->siteclass . '/' . $this->sitemethod . '/pass/{id}').'">审核</a>');
         $vars = array(
             'list_html' => $list_html,

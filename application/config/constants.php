@@ -86,7 +86,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 
 //定义表前缀
-define('DB_PREFIX', '');
+define('DB_PREFIX', 'ci_');
 
 //是否记录错误日志
 define('ERRORLOG', TRUE);
@@ -95,7 +95,7 @@ define('ERRORLOG', TRUE);
 define('DBLOG', TRUE);
 
 //缓存失效时间--- 以秒为单位
-define('CACHE_EXP',86400*360);
+define('CACHE_EXP',7200);
 
 /*
 |--------------------------------------------------------------------------

@@ -26,7 +26,7 @@ class Base_Controller extends Common_Controller {
 	public function checkAdminLogin($toLogin = true){
 		if($this->admin_id == ''){
 			if($toLogin){
-				redirect(MANAGER_PATH.'/admin/login');
+				redirect(MANAGER_PATH.'/Admin/login');
 			}else{
 				return false;
 			}
@@ -78,12 +78,19 @@ class Base_Controller extends Common_Controller {
 
 	//得到adminmenu.php中所有权限
 	public function get_all_privileges($privileges = array()){
-		include APPPATH."config/adminmenu.php";
-		$admin_privileges = array();
-		foreach ($ADMIN_MENU['menu'] as $key => $val){
-			$row = array();
+		//include APPPATH."config/adminmenu.php";
+        /**
+         * 2017-06-21进行更改
+         * 将权限节点分别填入到config/adminmenu/*.php
+         * 再将每个节点进行合并进行管理
+         */
+        $admin_privileges = array();
+        $menu = $this->get_admin_menu();
+
+        foreach ($menu as $key => $val){
 			$admin_privileges[$key] = $val;
 		}
+
 		$normal_menu_arr = array();
 		if(!$this->is_root && !empty($privileges)){
 			$privileges = unserialize($privileges);
@@ -101,14 +108,15 @@ class Base_Controller extends Common_Controller {
 			}
 			$admin_privileges = $normal_menu_arr;
 		}
+
 		return $admin_privileges;
 	}
 	
 	//以siteclass为键，得到权限节点
 	public function get_all_privileges_by_siteclass(){
-		include APPPATH."config/adminmenu.php";
+		$menu = $this->get_admin_menu();
 		$privileges = array();
-		foreach ($ADMIN_MENU['menu'] as $key => $val){
+		foreach ($menu as $key => $val){
 			$row = array();
 			$row = $val['lists'];
 			foreach($row as $k => $r){
@@ -119,7 +127,19 @@ class Base_Controller extends Common_Controller {
 		return $privileges;
 	}
 
-		/**
+    //得到所有定义的权限节点
+	private function get_admin_menu(){
+        $menu_folder = APPPATH . 'config/adminmenu';
+        $menu_files = glob($menu_folder. '/*.php');
+        $menu_array = array();
+        foreach($menu_files as $k => $file){
+            include $file;
+            $menu_array[] = @$config;
+        }
+        return $menu_array;
+    }
+
+    /**
 	 * 前台提示信息
 	 * @param string $err   输出信息
 	 * @param string $url  跳转到URL

@@ -2,20 +2,23 @@
 
 function get_page($tb, $where = array(), $field = '*', $order = '',  $page_query = '', $perpage = 10 ){
     $CI =& get_instance();
-
+    $form_data = !empty($CI->data['form_data']) ? $CI->data['form_data'] : $CI->form_data;
     //拼接搜索条件
-    foreach($CI->data['form_data'] as $k => $r){
-        if(empty($r['show_in_search'])){
-            continue;
-        }
-        if(isset($_GET[$k]) && $_GET[$k] !== ''){
-            if(isset($r['search_type'])){
-                $where['like'] = array($k => _get($k));
-            }else{
-                $where[$k] = _get($k);
+    if(!empty($form_data)){
+        foreach($form_data as $k => $r){
+            if(empty($r['show_in_search'])){
+                continue;
+            }
+            if(isset($_GET[$k]) && $_GET[$k] !== ''){
+                if(isset($r['search_type'])){
+                    $where['like'] = array($k => _get($k));
+                }else{
+                    $where[$k] = _get($k);
+                }
             }
         }
     }
+
 
     $model = $CI->Result_model;
     $total_rows_row = $model->getRow($tb, "Count(*) as cnt " , $where, $order);
@@ -170,12 +173,14 @@ function get_list_html($table_data, $data, $has_list_order = false, $more_operat
 
 //获取搜索表单
 function get_search_item($table_data){
+    $show_search = false;
     $html = '<form action="" method="get" id="searchForm">';
         foreach($table_data as $k => $r){
             //过滤搜索选项
             if(empty($r['show_in_search'])){
                 continue;
             }
+            $show_search = true;
 
             if(empty($r['data'])){
                 $html .= $r['field'] . ' &nbsp;&nbsp;<input class="input-txt" type="text" value="'._get($k).'" name="'.$k.'" />';
@@ -191,7 +196,7 @@ function get_search_item($table_data){
                 $html .= '</select>&nbsp;&nbsp;';
             }
         }
-    $html .= '&nbsp;&nbsp;<input type="submit" value="搜 索" class="batch delect_batch input-button" /></form>';
+    $html .= $show_search ? '&nbsp;&nbsp;<input type="submit" value="搜 索" class="batch delect_batch input-button" /></form>' : '';
     return $html;
 }
 
