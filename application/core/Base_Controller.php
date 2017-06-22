@@ -277,16 +277,8 @@ class Base_Controller extends Common_Controller {
 
 	//得到记录
 	public function getRow($id, $field = '*'){
-		if(!$id){
-			$this->message('参数错误');
-		}
-		$where = array(
-			$this->primary => $id
-		);
-		$row = $this->Result_model->getRow($this->tb, $field, $where);
-		if(empty($row)){
-			$this->message('内容不存在');
-		}
+        $this->load->model('Check_model');
+        $row = $this->Check_model->checkRow($this->tb, $this->primary, $id, $field);
 		$this->data['row'] = $row;
 		return $row;
 	}

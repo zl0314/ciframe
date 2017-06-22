@@ -94,8 +94,8 @@ function checkALLPrivileges2(id, b){
   
   
   <div class="table_div align_c">
-    <input type="submit" id="SubmitBtn" value="确 定" class="button100" />
-	<input type="button" value="返 回" class="button100" onclick="window.location.href='<?php echo site_url('Manager/adminuser')?>'" />
+    <input type="submit" id="SubmitBtn" value="确 定" class="input-button" />
+	<input type="button" value="返 回" class="input-button" onclick="window.location.href='<?php echo site_url('Manager/adminuser')?>'" />
     <input type="hidden" name="formhash" value="<?php echo formhash()?>" />
     <input type="hidden" name="dosubmit" value="1" />
   </div>
