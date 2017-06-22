@@ -12,14 +12,12 @@ class Captcha extends MY_Controller{
 //             'word'      => 'Random word',
             // 'img_path'  => dirname(BASEPATH).'/static/captcha/',
             // 'img_url'   => '/static/captcha/',
-            //'font_path' => './path/to/fonts/texb.ttf',
-            'img_width' => 50,
-            'img_height'    => 30,
-            'expiration'    => 7200,
+            'font_path' => './path/to/fonts/texb.ttf',
+            'img_width' => 60,
+            'img_height'    => 33,
             'word_length'   => 4,
-            'font_size' => 12,
-//             'img_id'    => 'Imageid',
-            'pool'      => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'font_size' => 13,
+            'pool'      => '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
         
             // White background and border, black text and red grid
             'colors'    => array(

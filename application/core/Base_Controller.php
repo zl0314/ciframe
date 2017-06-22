@@ -1,19 +1,32 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Base_Controller extends Common_Controller {
+
 	public $form_data;
+	//表名
 	public $tb;
+	//主键
 	public $primary;
+	//是否有addtime字段
 	public $has_addtime;
+	//登录的管理员信息
+    public $admin_info;
 
 	function __construct(){
 		parent::__construct() ;
 		$this->data['form_data'] = $this->form_data;
 
-		$admin_id = $this->session->userdata('admin_id');
-		$this->admin_id = $admin_id;
-		$this->is_root = $this->session->userdata('is_root');
+        //管理员信息
+        $this->data['admin_info'] = $this->session->userdata('admin_info');
+        $this->admin_info = $this->data['admin_info'];
 
+		//管理员ID
+		$admin_id = $this->admin_info['user_id'];
+		$this->admin_id = $admin_id;
+		//是否超级管理员
+		$this->is_root = $this->admin_info['is_root'];
+
+        //默认的头文件和尾文件
         $this->data['header'] = MANAGER_PATH.'/header';
         $this->data['footer'] = MANAGER_PATH.'/footer';
 	}
@@ -37,7 +50,7 @@ class Base_Controller extends Common_Controller {
 
 	//检查后台帐号权限
 	public function check_privileges($class, $method, $output = 'html'){
-		$is_root = $this->session->userdata('is_root');
+		$is_root = $this->admin_info['is_root'];
 		$privileges = $this->getAdminPrivileges();
 		$this->data['menus'] = $this->get_all_privileges_by_siteclass();
 		$this->data['admin_menus'] = $this->get_all_privileges($privileges);

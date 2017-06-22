@@ -37,7 +37,7 @@ $(function(){
 	  <?php endif;?>
 
   </ul>
-  <p><a href="<?php echo site_url()?>" target="_blank">访问首页</a><span>您好 ，<?php echo $this->session->userdata('nick_name');?>，欢迎回来, </span><a href="<?php echo site_url('Manager/Admin/logout');?>">退出</a></p>
+  <p><a href="<?php echo site_url()?>" target="_blank">访问首页</a><span>您好 ，<?php echo $admin_info['nick_name'];?>，欢迎回来, </span><a href="<?php echo site_url('Manager/Admin/logout');?>">退出</a></p>
 </div>
 <div id="mainDiv" class="main-frame" style="height: 677px; ">
   <iframe src="<?php echo site_url('Manager/Admin/center');?>" id="mainframe" name="mainframe" width="100%" height="100%" frameborder="0" title="main frame content"></iframe>

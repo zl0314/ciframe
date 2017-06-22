@@ -345,21 +345,30 @@ function saddslashes($string) {
 /**
  * 得到$_POST下某值
  * @param string $key
- * @param bool $strict 是否严谨模式，在严谨模式下，会判断值是否不为空
+ * @param string $default 默认值
+ * @param bool $strict 是否严谨模式，在严谨模式下，会判断值是否为空
  * @return array string  NULL
  * @author ZhangLong
  * @date 2015-05-12
  */
-function _post($key = '', $act = '_POST'){
+function _post($key = '', $default = '', $strict = false, $act = '_POST'){
     $method = $_POST;
     if($act == '_GET'){
         $method = $_GET;
     }
     if($key){
-        if(!empty($method[$key])){
-            return newhtmlspecialchars($method[$key]);
+        if(!$strict){
+            if(isset($method[$key])){
+                return newhtmlspecialchars($method[$key]);
+            }else{
+                return $default;
+            }
         }else{
-            return false;
+            if(!empty($method[$key])){
+                return newhtmlspecialchars($method[$key]);
+            }else{
+                return $default;
+            }
         }
     }else{
         return newhtmlspecialchars($method);
@@ -368,13 +377,14 @@ function _post($key = '', $act = '_POST'){
 /**
  * 得到$_GET下某值
  * @param string $key
+ * @param string $default 默认值
  * @param bool $strict 是否严谨模式，在严谨模式下，会判断值是否不为空
  * @return array string  NULL
  * @author ZhangLong
  * @date 2015-05-12
  */
-function _get($key = ''){
-    return _post($key, '_GET');
+function _get($key = '', $default = '', $strict = false){
+    return _post($key, $default, $strict,'_GET');
 }
 
 //判断提交是否正确

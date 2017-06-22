@@ -43,6 +43,7 @@ $lang['renewal_status_0'] = '未处理';
 $lang['renewal_status_1'] = '续租成功';
 $lang['renewal_status_-1'] = '未通过';
 
+$lang['last_login'] = '最后登录时间';
 //$lang['visit_paper_export']['isshow'] = '是否显示';
 //$lang['visit_paper_export']['addtime'] = '添加时间';
 

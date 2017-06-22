@@ -113,6 +113,9 @@ class Adminuser extends Base_Controller {
 				$this->message('密码长度不能小于6位', HTTP_REFERER);
 			}
 			if( $data['is_root']  != 1 ) $data['is_root'] = 0;
+			//默认权限
+            $data['permissions'] = 'a:1:{s:5:"Admin";a:3:{i:0;s:5:"index";i:1;s:6:"center";i:2;s:6:"logout";}}';
+
 			$this->Result_model->save($this->tb,$data, 'user_id');
 			$this->message('操作成功' , site_url('Manager/'.$this->siteclass.'/index'));
 		}
