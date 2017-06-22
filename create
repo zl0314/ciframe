@@ -21,7 +21,7 @@ if(!empty($argv['1'])){
     $description = !empty( $argv[6] ) ? $argv[6] : 'File description here';
     //路径 位于 application文件夹下的路基与
     $path = !empty( $argv[5] ) ? $argv[5] : '';
-    $source_path = $path;
+    $source_path = !empty($path) ? $path . '_' : 'Manager_';
     $path = !empty($path) ? $path . '_' : 'Manager_';
 
     //模板文件
@@ -110,7 +110,7 @@ if(!empty($argv['1'])){
             $data[$fields['Field']]['type'] = $type;
 
             //是否是编辑器
-            if($fields['Type'] == 'text'){
+            if($fields['Type'] == 'text' || $fields['Field'] == 'content'){
                 $data[$fields['Field']]['editor'] = true;
             }
             $table_data = var_export($data, true);
