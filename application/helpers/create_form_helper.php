@@ -15,7 +15,7 @@
 'type' => 'time',
 'field' => '开始时间',
 'readonly' => true,
-'format' => 'yyyy-mm-dd HH:mm:ss'
+'format' => 'yyyy-MM-dd HH:mm:ss'
 ),
 'thumb' => array(
 'type' => 'image',
@@ -117,10 +117,11 @@ if(!function_exists('createFormHtml')){
                         break;
 
                     case 'time' :	//时间选择
+                        $format = !empty($r['format']) ? $r['format'] : 'yyyy-MM-dd HH:mm:ss';
                         $formHtml .= '<div class="form-row" id="wrapper_'.$k.'">
 					          <label for="'.$k.'" class="form-field">'.$field.'</label>
 					          <div class="form-cont">
-					          <input type="text" id="'.$k.'" '.$required.' name="data['.$k.']" class="input-txt Wdate"   onfocus="WdatePicker({ dateFmt:\''.$r['format'].'\',readOnly:'.$r['readonly'].'})" value="'.$value.'" >
+					          <input type="text" id="'.$k.'" '.$required.' name="data['.$k.']" class="input-txt Wdate"   onfocus="WdatePicker({ dateFmt:\''.$format.'\',readOnly:'.$readonly.'})" value="'.$value.'" >
 					          '.$form_error.'
 					           </div>
 					          <span style="display:block;">'.$tip.'</span>

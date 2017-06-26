@@ -9,8 +9,9 @@
             <th><div class="th-gap">ID</div></th>
             <th><div class="th-gap">用户名</div></th>
             <th><div class="th-gap">真实姓名</div></th>
-            
-            <th><div class="th-gap">添加</div></th>
+              <th><div class="th-gap">添加</div></th>
+
+              <th><div class="th-gap">添加</div></th>
             <th><div class="th-gap">操作</div></th>
           </tr>
         </thead>
@@ -26,8 +27,9 @@
             <td><?php echo $v['user_id'];?></td>
             <td><?php echo $v['user_name'];?></td>
             <td><?php echo $v['nick_name'];?></td>
-           
-            <td><?php echo $v['addtime'];?></td>
+              <td><?php echo $v['status'] == 1 ? '开启' : '关闭';?></td>
+
+              <td><?php echo $v['addtime'];?></td>
             <td>
               <a class="icon-edit" title="编辑" href="<?php echo site_url(sprintf('Manager/'.$siteclass."/add/%s" , $v['user_id']));?>">编辑</a>
 

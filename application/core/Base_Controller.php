@@ -221,11 +221,10 @@ class Base_Controller extends Common_Controller {
 
    /**
     * 保存数据 
-    * @param  [array] $data 要进行验证的数据
-    * @param  [string] $tb   表名
-    * @return [int|boolan|array]       [插入值或false或数组]
+    * @param  [array] $row 要进行验证的数据
+    * @param  [string] $callback   回调函数
     */
-    protected function saveData($row = array()){
+    protected function saveData($row = array(), $callback = ''){
         $post = _post('data');
         $row = !empty($post) ? $post : $row;
 		$data = $this->form_data;
@@ -265,7 +264,11 @@ class Base_Controller extends Common_Controller {
 				}
 				$res = $this->Result_model->save($tb, $save_data, $primary);
 				if($res){
-					url_to();
+					if(!empty($callback)){
+                        $callback($res);//执行回调函数
+                    }else{
+                        url_to();
+                    }
 				}
 			}else{
 

@@ -82,7 +82,9 @@ function get_page($tb, $where = array(), $field = '*', $order = '',  $page_query
 }
 
 //得到列表页面HTML
-function get_list_html($table_data, $data, $has_list_order = false, $more_operater = ''){
+
+//得到列表页面HTML
+function get_list_html($table_data, $data, $has_list_order = false, $more_operater = '', $has_operate = true){
 
     $CI =& get_instance();
     //路由
@@ -102,25 +104,29 @@ function get_list_html($table_data, $data, $has_list_order = false, $more_operat
 
     //列表标题
     foreach($table_data as $k => $r){
+        if(!empty($r['is_primary'])){
+            $primary = $k;
+        }
         if(empty($r['show_in_table'])){
             continue;
         }
-        $html .= '<th ><div class="th-gap" >'.$r['field'].'</div></th>';
+        $html .= '<th ><div class="th-gap" >'.$r['field'].'</div></th>' ;
     }
 
-    $html .= ' <th ><div class="th-gap">操作</div></th>';
+    $html .= $has_operate ? ' <th ><div class="th-gap">操作</div></th>' : '';
     $html .= '</tr></thead>';
 
     //tfoot
     $page_html = !empty($data['page_html']) ? $data['page_html'] : '';
     $lit_order_html = $has_list_order ? '<input type="button" value="排 序"onclick="listorder()">' : '';
-    $html .= '<tfoot class="td-foot-bg"><tr><td>'.$lit_order_html.'<input type="button" class="batch delect_batch" value="删 除" onclick="delitem(\'a\', this)"><div class="pre-next"> '.$page_html.'</div></td></tr></tfoot>';
+    $html .= '<tfoot class="td-foot-bg"><tr><td>'.$lit_order_html.'<input type="button" class="batch delect_batch" value="删 除" onclick="delitem(\'a\', this)">
+    一共 <b>'.$GLOBALS['total_rows'].'</b> 条数据 <div class="pre-next"> '.$page_html.'</div></td></tr></tfoot>';
 
     //tbody
     $html .= '<tbody>';
     if(!empty($data['list'])){
         foreach($data['list'] as $k => $r){
-            $html .= '<tr id="item_'.$r['id'].'">';
+            $html .= '<tr id="item_'.$r[$primary].'">';
             foreach($table_data as $tk => $tr){
                 $value = !empty($r[$tk]) ? $r[$tk] : '';
                 if(empty($tr['show_in_table']) && empty($tr['is_primary'])){
@@ -134,10 +140,21 @@ function get_list_html($table_data, $data, $has_list_order = false, $more_operat
                 }
 
                 if(!empty($tr['data'])){
-                    $html .=  '<td>'.$tr['data'][$r[$tk]].'</td>';continue;
+                    if(strpos($r[$tk], ',') !== false){
+                        $list_arr = explode(',', $r[$tk]);
+                        $list_arr_html = '';
+                        $list_arr_html_contact = '';
+                        foreach($list_arr as $lk => $lr){
+                            $list_arr_html .= $list_arr_html_contact . $tr['data'][$lr];
+                            $list_arr_html_contact = ',';
+                        }
+                        $html .=  '<td>'.$list_arr_html.'</td>';continue;
+                    }else{
+                        $html .=  '<td>'.$tr['data'][$r[$tk]].'</td>';continue;
+                    }
                 }
                 //时间转换
-                if($tr['type'] == 'time'){
+                if(!empty($tr['type']) && $tr['type'] == 'time'){
                     if(!empty($r[$tk]) && is_numeric($r[$tk])){
                         $html .=  '<td>'.strtotime($tr['format'], $value).'</td>';
                     }else{
@@ -155,11 +172,11 @@ function get_list_html($table_data, $data, $has_list_order = false, $more_operat
                 $more_operater
             );
 
-            $html .= '<td>
+            $html .= $has_operate ? '<td>
                         <a  title="编辑" href="'.get_url(MANAGER_PATH . '/'.$siteclass . '/edit/' . $r[$primary]).'">编辑</a> |
                         <a  onclick="delitem(\''.$r[$primary].'\',this)"  title="删除" href="javascript:;">删除</a><br>
                         '.$more_operater.'
-                        </td>';
+                        </td>' : '';
             $html .= '</tr>';
         }
     }else{
@@ -175,28 +192,29 @@ function get_list_html($table_data, $data, $has_list_order = false, $more_operat
 function get_search_item($table_data){
     $show_search = false;
     $html = '<form action="" method="get" id="searchForm">';
-        foreach($table_data as $k => $r){
-            //过滤搜索选项
-            if(empty($r['show_in_search'])){
-                continue;
-            }
-            $show_search = true;
-
-            if(empty($r['data'])){
-                $html .= $r['field'] . ' &nbsp;&nbsp;<input class="input-txt" type="text" value="'._get($k).'" name="'.$k.'" />';
-            }else{
-                $html .= $r['field'] . '&nbsp;&nbsp;<select name="'.$k.'" id="'.$k.'" onchange="$(\'#searchForm\').submit()"><option value="">请选择</option>';
-                    foreach($r['data'] as $dk => $dr){
-                        $selected = '';
-                        if(isset($_GET[$k]) && $_GET[$k] !== '' && $dk == $_GET[$k]){
-                            $selected = 'selected';
-                        }
-                        $html .= '<option value="'.$dk.'" '.$selected.'>'.$dr.'</option>';
-                    }
-                $html .= '</select>&nbsp;&nbsp;';
-            }
+    foreach($table_data as $k => $r){
+        //过滤搜索选项
+        if(empty($r['show_in_search'])){
+            continue;
         }
-    $html .= $show_search ? '&nbsp;&nbsp;<input type="submit" value="搜 索" class="batch delect_batch input-button" /></form>' : '';
+        $show_search = true;
+
+        if(empty($r['data'])){
+            $html .= $r['field'] . ' &nbsp;&nbsp;<input class="input-txt" type="text" value="'._get($k).'" name="'.$k.'" />';
+        }else{
+            $html .= $r['field'] . '&nbsp;&nbsp;<select name="'.$k.'" id="'.$k.'" onchange="$(\'#searchForm\').submit()"><option value="">请选择</option>';
+            foreach($r['data'] as $dk => $dr){
+                $selected = '';
+                if(isset($_GET[$k]) && $_GET[$k] !== '' && $dk == $_GET[$k]){
+                    $selected = 'selected';
+                }
+                $html .= '<option value="'.$dk.'" '.$selected.'>'.$dr.'</option>';
+            }
+            $html .= '</select>&nbsp;&nbsp;';
+        }
+    }
+    $html .= $show_search ? '&nbsp;&nbsp;<input type="submit" value="搜 索" class="batch delect_batch input-button" />' : '';
+    $html .= '</form>';
     return $html;
 }
 
@@ -1066,4 +1084,73 @@ function url_to($siteclass = '', $sitemethod = 'index', $param = array()){
 
     $uri = get_url($url, $param);
     redirect($uri);
+}
+
+
+//获取一行记录
+function getRow($sql = '', $tbname = '', $field = '') {
+    $CI = & get_instance();
+    $CI->load->database();
+    $db = $CI->db;
+    if(!is_array($sql)){
+        $query = $db->query($sql .' LIMIT 1');
+        if($query){
+            $result = $query->row_array();
+            return $result;
+        }
+    }else if(is_array($sql)){
+        $wheresql = '';
+        $con = '';
+        foreach($sql as $k => $v){
+            $wheresql .= $con."`$k` = '$v'";
+            $con = ' AND ';
+        }
+        $sql = "SELECT $field FROM ".tname($tbname) . " WHERE $wheresql";
+        $query = $db->query($sql .' LIMIT 1');
+        if($query){
+            $result = $query->row_array();
+            return $result;
+        }
+    }
+    return null;
+}
+//获取值
+function getOne($sql, $tbname = '', $field = ''){
+    if($row = GetRow($sql, $tbname, $field)){
+        $row = array_values($row);
+        return $row[0];
+    }
+    return null;
+}
+
+//更新数据
+function updatetable($tablename, $setsqlarr, $wheresqlarr) {
+    $CI =& get_instance();
+    $CI->load->database();
+    $db = $CI->db;
+    $setsql = $comma = '';
+    foreach ($setsqlarr as $set_key => $set_value) {
+        $setsql .= $comma.'`'.$set_key.'`'.'=\''.$set_value.'\'';
+        $comma = ', ';
+    }
+    $where = $comma = '';
+    if(empty($wheresqlarr)) {
+        $where = '1';
+    } elseif(is_array($wheresqlarr)) {
+        foreach ($wheresqlarr as $key => $value) {
+            $where .= $comma.'`'.$key.'`'.'=\''.$value.'\'';
+            $comma = ' AND ';
+        }
+    } else {
+        $where = $wheresqlarr;
+    }
+    return $db->query('UPDATE '.tname($tablename).' SET '.$setsql.' WHERE '.$where);
+}
+//格式化时间格式
+function format_time($time, $format = 'Y.m.d'){
+    if(is_string($time)){
+        return $format ? date($format, strtotime($time)) : $time;
+    }else{
+        return $format ? date($format, $time) : date('Y-m-d H:i:s', $time);
+    }
 }

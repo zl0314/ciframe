@@ -5,34 +5,45 @@
  * Description  : 自动创建控制器 |模型
  *
  * @usage
- * php create.php controller(自动创建控制器) Power(文件名) 以下参数可选 [ power(表名) id(主键) Manager(创建Manager目录下的控制器) ]
+ * php create.php controller(自动创建控制器) Power(文件名) 以下参数可选 [ power(表名) id(主键)]
  */
+
+//定义数据库表前缘
+define('PB','ci_');
 
 //模板文件
 if(!empty($argv['1'])){
+    //读取数据库配置文件,得到数据库连接信息
+    $config = file_get_contents('application/config/database.php');
+    $array = explode(PHP_EOL, $config);
+    $db_host = $db_user_name = $db_password = $database = '';
+    $pattern = '/\'(hostname|username|password|database)\'\s=>\s\'(.*)\',/';
+    $res = preg_match_all($pattern, $config, $m);
 
+    if(!empty($m[2])){
+        $db_host        = $m[2][0];
+        $db_user_name   = $m[2][1];
+        $db_password    = $m[2][2];
+        $database       = $m[2][3];
+    }
     //文件名
     $filename = !empty( $argv[2] ) ? $argv[2] : '';
     //表名
     $table = !empty( $argv[3] ) ? $argv[3] : '';
     //主键
     $primary = !empty( $argv[4] ) ? $argv[4] : 'id';
-    //文件描述
-    $description = !empty( $argv[6] ) ? $argv[6] : 'File description here';
-    //路径 位于 application文件夹下的路基与
-    $path = !empty( $argv[5] ) ? $argv[5] : '';
-    $source_path = !empty($path) ? $path . '_' : 'Manager_';
-    $path = !empty($path) ? $path . '_' : 'Manager_';
+
+    $description = 'File description here';
 
     //模板文件
-    $templage_file = 'create_template/' . $path . $argv[1];
+    $templage_file = 'create_template/' . $argv[1];
 
     if($argv['1'] != 'help'){
         //获取模板文件
         if(!file_exists($templage_file) ){
             exit('template file dose not exists~');
         }else{
-            $template = file_get_contents('create_template/' . $path . $argv[1]);
+            $template = file_get_contents('create_template/' . $argv[1]);
         }
     }
     //目标文件
@@ -46,8 +57,8 @@ if(!empty($argv['1'])){
     $table_data = array();
 
     if($argv['1'] == 'help'){
-        echo 'USAGE : php create.php [controller|model] filename table[It will valid when param1=controller ] primary[Same as param table] path description ';
-    }else if( $argv[1] == 'controller'){
+        echo 'USAGE : php create.php [controller|model|Manager_controller] filename table[It will valid when param1=controller ] primary[Same as param table] ';
+    }else if( $argv[1] == 'Manager_controller'){
 
         if(empty($filename)){
             exit('filename can not be empty');
@@ -60,17 +71,17 @@ if(!empty($argv['1'])){
         }
 
         $source_path = empty($source_path) ? '' : $source_path . '/';
-        $target = 'application/controllers/' . $source_path . ucwords($filename) . '.php';
+        $target = 'application/controllers/Manager/' . ucfirst($filename) . '.php';
         if(file_exists($target)){
             exit('file exists ' . $target);
         }
 
         //连接Mysql
-        define('DB','test');
-        define('TB',$table);
+        define('DB',$database);
+        define('TB', PB . $table);
 
-        $conn = mysqli_connect("localhost","root","zlflrhl");
-        mysqli_select_db($conn, DB);
+        $conn = mysqli_connect($db_host,$db_user_name,$db_password);
+        mysqli_select_db($conn, $database);
         mysqli_query($conn, "SET NAMES UTF8");
         $query = mysqli_query($conn, 'show FIELDS from ' . TB) or die(mysqli_error($conn));
 

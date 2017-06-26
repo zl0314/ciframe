@@ -43,7 +43,16 @@ $(function(){
             <input id="nick_name" type="text" name="data[nick_name]" class="input-txt" value="<?php echo $vo['nick_name'];?>" />
           </div>
         </div>
-
+          <div class="form-row">
+              <label for="nickname" class="form-field">状态</label>
+              <div class="form-cont">
+                  <select name="data[status]" id="status">
+                      <option value="">请选择</option>
+                      <option value="1" <?php if(!empty($vo['status'])):?>selected<?php endif;?> >开启</option>
+                      <option value="0"  <?php if(isset($vo['status']) && $vo['status'] == '0'):?>selected<?php endif;?> >关闭</option>
+                  </select>
+              </div>
+          </div>
         <input type="hidden" value="<?php echo $vo['is_root'];?>" name="data[is_root]" />
         <div class="btn-area">
           <input type="submit" style="width:70px; height:25px;">
