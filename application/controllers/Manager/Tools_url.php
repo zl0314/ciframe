@@ -34,6 +34,7 @@ class Tools_url extends Base_Controller {
                     'field' => 'Title',
                     'is_require' => true,
                     'type' => 'text',
+                    'show_in_table' => true,
                 ),
             'link_url' =>
                 array (
@@ -52,6 +53,7 @@ class Tools_url extends Base_Controller {
                     'field' => 'Hook',
                     'is_require' => true,
                     'type' => 'text',
+                    'show_in_table' => true,
                 ),
             'is_index' =>
                 array (

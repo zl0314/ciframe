@@ -26,9 +26,11 @@ CREATE TABLE `admin_user` (
   `nick_name` varchar(100) NOT NULL COMMENT '真实姓名',
   `is_root` tinyint(1) unsigned NOT NULL COMMENT '是否超级权限1是0否',
   `permissions` text COMMENT '权限节点',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '状态1开启0关闭',
   `isdelete` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0不删除1删除',
   `addtime` datetime NOT NULL COMMENT '添加时间',
   `salt` char(6) NOT NULL,
+  `last_login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='管理员表';
 

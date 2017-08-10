@@ -1,7 +1,8 @@
 <?php
 /**
  * 日志记录
- * @author mqq
+ * @author Aaron Zhang
+ * @QQ 815818648
  * usage : Log::error('this is a test error log');
  */
 class MyLog{

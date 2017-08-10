@@ -1,27 +1,24 @@
 <?php
 /**
  * 自动加载模板
- * @author zhang <nice5good@126.com>
+ * @author Aaron Zhang <nice5good@126.com>
  * @Date : 2016-12-15
  */
 
 class Tpl{
-    public $CI;
-    public $siteclass;
-    public $sitemethod;
-    public $data            = array();
-    public $template_file   = '';
-    
-    // //smarty参数设置
-    public $left_delimiter      = '<{';
-    public $right_delimiter     = '}>';
-    public $template_dir        = '';
-    public $compile_dir         = '';
-    public $cache_dir           = '';
-    public $debugging           = TRUE;
-    public $suffix              = '.php';
-    public $default_class;
-	public $manager_path;
+    private $CI;
+    private $siteclass;
+    private $sitemethod;
+    private $data            = array();
+    private $template_file   = '';
+
+    private $template_dir        = '';
+    private $compile_dir         = '';
+    private $cache_dir           = '';
+    private $debugging           = TRUE;
+    private $suffix              = '.php';
+    private $default_class;
+    private $manager_path;
 	
     public function __construct(){
         $this->CI = get_instance();
@@ -48,7 +45,7 @@ class Tpl{
      * 加载模板
      * @param string $template
      */
-    public function display($template = NULL, $cache_id = NULL, $compile_id = NULL, $parent = NULL){
+    public function display($template = NULL){
         $this->init_tpl_dir($template);
         $template = $template ? $template : $this->template_file;
 
@@ -78,7 +75,7 @@ class Tpl{
     /**
      * [给模板赋值]
      **/
-    public function assign( $tpl_var, $value = NULL, $nocache = false ) {
+    public function assign( $tpl_var, $value = NULL ) {
         if( is_array($tpl_var) ) {
             foreach( $tpl_var as $k => $v ) {
                 $this->assign($k , $v );
@@ -108,7 +105,7 @@ class Tpl{
         //创建以当前方法为文件名的文件
          if(!file_exists($template_file)){
              $handle = @fopen($template_file, 'w');
-             @fwrite($handle, 'welcome');
+             @fwrite($handle, ' ');
              @fclose($handle);
          }
     }

@@ -49,7 +49,7 @@ class Common_Controller extends CI_Controller {
     $this->checkData($data);
     * @return json
     */
-    protected function checkData($data){
+    protected function checFrontkData($data){
         //验证规则
         foreach($data as $name => $title){
             $rule = 'trim|required';
@@ -64,7 +64,7 @@ class Common_Controller extends CI_Controller {
         if($this->form_validation->run() == FALSE){
             $error = form_error($name);
             if($error){
-                    fail(strip_tags($error));
+                fail(strip_tags($error));
             }
         }
     }

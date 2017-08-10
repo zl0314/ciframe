@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | of this setting
 |
 */
-defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
+defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', ENVIRONMENT == 'development');
 
 /*
 |--------------------------------------------------------------------------
@@ -89,10 +89,10 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 define('DB_PREFIX', 'ci_');
 
 //是否记录错误日志
-define('ERRORLOG', TRUE);
+define('ERRORLOG', SHOW_DEBUG_BACKTRACE);
 
 //是否记录SQL语句
-define('DBLOG', TRUE);
+define('DBLOG', SHOW_DEBUG_BACKTRACE);
 
 //缓存失效时间--- 以秒为单位
 define('CACHE_EXP',7200);

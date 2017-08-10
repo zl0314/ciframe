@@ -39,7 +39,7 @@ class Userinfo{
 		//更新信息
 		updatetable(USER_TABLE, $data, array('user_id'=>$setarr['user_id']));
 		//设置在线Cookie
-		set_cookie('userinfo', self::authcode("{$setarr['authpwd']}|{$setarr['user_id']}|{$setarr['mobile_phone']}", 'ENCODE'), $cookietime);
+		set_cookie('userinfo', self::authcode("{$setarr['authpwd']}|{$setarr['user_id']}|{$setarr['mobile']}", 'ENCODE'), $cookietime);
 		set_cookie('loginuser', $setarr['user_name'], 31536000);
 	}
 

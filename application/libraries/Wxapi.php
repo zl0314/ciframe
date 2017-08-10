@@ -69,7 +69,7 @@ class Wxapi{
          * @$from  1网页版， 2小程序
          * @return  prepay_id
          */
-	public function unifiedOrder($data, $timeOut = 6, $from = 1){
+	public function unifiedOrder($data, $timeOut = 6){
 		$url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 		//检测必填参数
 		if(empty($data['out_trade_no'])) {
@@ -91,9 +91,6 @@ class Wxapi{
 		}
 		
 		$data['appid'] = self::APPID;//公众账号ID
-		if($from == 2){
-			$data['appid'] = self::WECHAT_XCX_APPID;//公众账号ID
-		}
 		$data['mch_id'] = self::MCHID;//商户号
 		// $data['bill_create_ip'] = getonlineip();//终端ip	  
 		//$inputObj->SetSpbill_create_ip("1.1.1.1");  	    
@@ -208,12 +205,10 @@ class Wxapi{
 	 * @param int $timeOut
 	 * * @$from  1网页版， 2小程序
 	 */
-	public function orderQuery($data, $timeOut = 6, $from = 1){
+	public function orderQuery($data, $timeOut = 6){
 		$url = "https://api.mch.weixin.qq.com/pay/orderquery";
 		$data['appid'] = self::APPID;
-		if($from == 2){
-			$data['appid'] = self::WECHAT_XCX_APPID;//公众账号ID
-		}
+
 		$data['mch_id'] = self::MCHID;
 		$data['nonce_str'] = self::getNonceStr();
 		$sign = $this->MakeSign($data);

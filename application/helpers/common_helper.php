@@ -2,7 +2,7 @@
 
 function get_page($tb, $where = array(), $field = '*', $order = '',  $page_query = '', $perpage = 10 ){
     $CI =& get_instance();
-    $form_data = !empty($CI->data['form_data']) ? $CI->data['form_data'] : $CI->form_data;
+    $form_data = !empty($CI->data['form_data']) ? $CI->data['form_data'] : ( !empty($CI->form_data) ? $CI->form_data : '');
     //拼接搜索条件
     if(!empty($form_data)){
         foreach($form_data as $k => $r){
@@ -1146,6 +1146,7 @@ function updatetable($tablename, $setsqlarr, $wheresqlarr) {
     }
     return $db->query('UPDATE '.tname($tablename).' SET '.$setsql.' WHERE '.$where);
 }
+
 //格式化时间格式
 function format_time($time, $format = 'Y.m.d'){
     if(is_string($time)){
@@ -1153,4 +1154,23 @@ function format_time($time, $format = 'Y.m.d'){
     }else{
         return $format ? date($format, $time) : date('Y-m-d H:i:s', $time);
     }
+}
+
+//是否是ajax请求
+function isAjax(){
+    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])){
+        return true;
+    }
+    return false;
+}
+
+//倒计时，获取分和秒
+function time2second($seconds){
+    $seconds = (int)$seconds;
+    $time = explode(' ', gmstrftime('%j %H %M %S', $seconds));//Array ( [0] => 04 [1] => 14 [2] => 14 [3] => 35 )
+    $format_time = ($time[0]-1).'day '.$time[1].'s'.$time[2].'m'.$time[3].'s';
+    return array(
+        'm' => $time['2'],
+        's' => $time['3'],
+    );
 }

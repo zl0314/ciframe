@@ -37,12 +37,4 @@ class MY_Controller extends Common_Controller {
 		}
 	}
 
-	//设置顶部导航标题
-	public function set_top_nav_title($title){
-		if($title){
-			$this->data['nav_title'] = $title;
-		}
-	}
-
-
 }

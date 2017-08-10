@@ -7,7 +7,5 @@
 require_once(APPPATH.'libraries/phpthumb/ThumbLib.inc.php');
 
 class picthumb extends PhpThumbFactory{
-    public function __construct(){
-
-    }
+    public function __construct(){  }
 }

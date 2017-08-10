@@ -1,4 +1,9 @@
 <?php
+/**
+ * 分页
+ * @author Aaron Zhang
+ * @QQ 815818648
+ */
 class Page
 {
 	private $total; //数据表中总记录数
@@ -10,11 +15,9 @@ class Page
 	private $listNum = 12;
 
 
-	public function __construct() {
-	}
+	public function __construct() { }
 
-	public function init($total = 0, $listRows = 10, $pa = "")
-	{
+	public function init($total = 0, $listRows = 10, $pa = "") {
 		$this->total = $total;
 		$this->listRows = $listRows;
 		$this->uri = $this->getUri($pa);
@@ -26,14 +29,12 @@ class Page
 		$this->limit = $this->setLimit();
 	}
 
-	private function setLimit()
-	{
+	private function setLimit() {
 		return " Limit " . ($this->page - 1) * $this->listRows . ", {$this->listRows}";
 	}
 
 	//定义一个获得当前url的函数  并取出最后一个？出现的地方，如果当前url没有？ 那么当前url就行于当前的url，否则就加上一个？  如果已有，有？的地方，还是只有一个？
-	private function getUri($pa)
-	{
+	private function getUri($pa) {
 		$url = $_SERVER["REQUEST_URI"] . (strpos($_SERVER["REQUEST_URI"], '?') ? '' : "?") . $pa;
 
 		$parse = parse_url($url);
@@ -47,29 +48,29 @@ class Page
 		return $url;
 	}
 
-	public function __get($args = '')
-	{
-		if ($args == "limit")
-			return $this->limit;
-		else
-			return null;
+    //获取LIMIT语句
+	public function __get($args = '') {
+		if ($args == "limit"){
+            return $this->limit;
+        }else{
+            return null;
+        }
 	}
 
-	private function start()
-	{
-		if ($this->total == 0)
-			return 0;
-		else
-			return ($this->page - 1) * $this->listRows + 1;
+    //首页
+	private function start() {
+		if ($this->total == 0){
+            return 0;
+        } else{
+            return ($this->page - 1) * $this->listRows + 1;
+        }
 	}
-
-	private function end()
-	{
+    //最后一页
+	private function end() {
 		return min($this->page * $this->listRows, $this->total);
 	}
-
-	private function first()
-	{
+    //第一页
+	private function first() {
 		$html = '';
 		if ($this->page == 1) {
 			$html .= '';
@@ -78,9 +79,8 @@ class Page
 			return $html;
 		}
 	}
-
-	private function prev()
-	{
+    //上一页
+	private function prev() {
 		$html = '';
 		if ($this->page == 1) {
 			$html .= '';
@@ -89,9 +89,8 @@ class Page
 		}
 		return $html;
 	}
-
-	private function pageList()
-	{
+    //分页列表
+	private function pageList() {
 		$linkPage = "";
 
 		$inum = floor($this->listNum / 2);
@@ -121,8 +120,8 @@ class Page
 		return $linkPage;
 	}
 
-	private function next()
-	{
+	//下一页
+	private function next() {
 		$html = '';
 		if ($this->page >= $this->pageNum) {
 			$html .= '';
@@ -132,8 +131,8 @@ class Page
 		return $html;
 	}
 
-	private function last()
-	{
+    //最后一页
+	private function last() {
 		$html = '';
 		if ($this->page == $this->pageNum) {
 			$html .= '';
@@ -142,14 +141,13 @@ class Page
 		}
 		return $html;
 	}
-
-	private function goPage()
-	{
+    //跳转到指定面面
+	private function goPage() {
 		return '<input type="text" onkeydown="javascript:if(event.keyCode==13){var page=(this.value' . $this->pageNum . ')?' . $this->pageNum . ':this.value;location=\'' . $this->uri . '&page=\'+page+\'\'}" value="' . $this->page . '" style="width:25px"><input type="button" value="GO" onclick="javascript:var page=(this.previousSibling.value' . $this->pageNum . ')?' . $this->pageNum . ':this.previousSibling.value;location=\'' . $this->uri . '&page=\'+page+\'\'">';
 	}
 
-	function fpage($display = array(0, 1, 2, 3, 4, 5, 6, 7, 8))
-	{
+	//执行分页操作
+	function fpage($display = array(0, 1, 2, 3, 4, 5, 6, 7, 8)) {
 		$html[0] = "共有<b>{$this->total}</b>{$this->config["header"]}";
 		$html[1] = "每页显示<b>" . ($this->end() - $this->start() + 1) . "</b>条，本页<b>{$this->start()}-{$this->end()}</b>条";
 		$html[2] = "<b>{$this->page}/{$this->pageNum}</b>页";
@@ -162,7 +160,7 @@ class Page
 		$html[8] = $this->goPage();
 		$fpage = '';
 		foreach ($display as $index) {
-			$fpage .= $html[$index];
+			$fpage .= !empty($html[$index]) ? $html[$index] : '';
 		}
 		return $fpage;
 	}

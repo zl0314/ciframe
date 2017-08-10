@@ -135,7 +135,7 @@ if(!function_exists('createFormHtml')){
 								<label for="'.$k.'" class="form-field">'.$field.'</label>
 								<div class="form-cont">
 									<input id="'.$k.'" type="text" name="data['.$k.']" readonly class="input-txt" value="'.$value.'" />
-									 <input type="button" class="ajaxUploadBtn" id="'.$name.'_button" onclick="ajaxUpload(\''.$name.'\', \''.$siteclass.'\', '.$width.', '.$height.')" value="上传图片" style="width:70px; height:25px;">
+									 <input type="button" class="ajaxUploadBtn" id="'.$name.'_button" onclick="ajaxUpload(\''.$name.'\', \''.$siteclass.'\', \''.$width.'\', \''.$height.'\')" value="上传图片" style="width:70px; height:25px;">
 									'.$form_error.'
 									 <span style="display:block;">'.$tip.'</span>
 									 <img id="preview_'.$name.'" class="img_prview" style="width:200px;height:130px;" '.$src.'>
